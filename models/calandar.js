@@ -4,9 +4,7 @@
 //         familyid: DataTypes.STRING,
 //         event: DataTypes.STRING,
 //         eventDate: DataTypes.DATE,
-//         eventTime: DataTypes.TIME,
-//         createdAt: DataTypes.DATE,
-//         updatedAt: DataTypes.DATE
+//         eventTime: DataTypes.TIME
 //        },
 //         {
 //             freezeTableName: true
