@@ -1,11 +1,15 @@
-import React from "react";
+import React, { Component } from 'react';
 
-function Footer(props)  {
-    return <footer id="page-footer" class="uk-margin-top" uk-sticky>
-    <div class="uk-container uk-padding-small">
-        <p>FAM.ily</p>
-    </div>
-</footer>
+class Footer extends Component {
+
+    render() {
+        return (
+            <footer className="pagefooter font-small pt-4">
+                <div className="footer-copyright text-center py-3">© 2019 Copyright:
+                    <a href="#"> FAM.ily</a>
+                </div>
+            </footer>
+        )
+    }
 }
-
-export default Footer;
+export default Footer

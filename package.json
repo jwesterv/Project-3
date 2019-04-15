@@ -25,6 +25,7 @@
     "firebase": "^5.9.3",
     "if-env": "^1.0.4",
     "mysql2": "^1.6.5",
+    "react-router-dom": "^5.0.0",
     "sequelize": "^5.2.8",
     "sequelize-cli": "^5.4.0",
     "vue": "^2.6.10",

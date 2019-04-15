@@ -1,43 +1,22 @@
 import React, { Component } from "react";
-import firebase from 'firebase';
 import "./App.css";
-import MessageList from './components/MessageList';
-import Header from './components/Header';
-import MessageBox from './components/MessageBox';
-
-// import logo from "./logo.svg";
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    var config = {
-      apiKey: "AIzaSyCcq7i-yLkoaJ5kZoFJEzl6LTSkXfpKFWw",
-      authDomain: "family-97404.firebaseapp.com",
-      databaseURL: "https://family-97404.firebaseio.com",
-      projectId: "family-97404",
-      storageBucket: "family-97404.appspot.com",
-      messagingSenderId: "991582671358"
-    };
-    firebase.initializeApp(config);
-  }
   render() {
     return (
-      <div className="container">
-        <Header title="Firebase Chat" />
-        <div className="columns">
-          <div className="column is-3"></div>
-          <div className="column is-6">
-            <MessageList db={firebase} />
-          </div>
-        </div>
-        <div className="columns">
-          <div className="column is-3"></div>
-          <div className="column is-6">
-            <MessageBox db={firebase} />
-          </div>
+      //Background image "pending"
+      <div className="view">
+      {/*Container to hold and center logo and buttons in page*/}
+        <div className="container">
+        {/*Logo made but needs to be made available in vector*/}
+          <div className="logo"></div>
+          {/*Buttons to navigate to pages, no routes yet*/}
+          <button className="btn btn-rounded btn-outline-light btn-primary">Create</button>
+          <button className="btn btn-rounded btn-outline-light btn-primary">Join</button>
         </div>
       </div>
+
     );
   }
 }
