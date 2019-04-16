@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import firebase from 'firebase';
-import MessageList from '../components/Messagelist/MessageList';
+import MessageList from '../components/Messagelist';
 import Header from '../components/Header/Header';
 import MessageBox from '../components/MessageBox/MessageBox';
 
