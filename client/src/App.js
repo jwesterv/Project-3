@@ -1,45 +1,21 @@
 import React, { Component } from "react";
-import firebase from 'firebase';
-import "./App.css";
-import MessageList from './components/MessageList';
-import Header from './components/Header';
-import MessageBox from './components/MessageBox';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+// import "./App.css";
+import Main from "./pages/Main/Main";
+import About from "./pages/About/About";
+import Chat from "./pages/Chat"
 
-// import logo from "./logo.svg";
-
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    var config = {
-      apiKey: "AIzaSyCcq7i-yLkoaJ5kZoFJEzl6LTSkXfpKFWw",
-      authDomain: "family-97404.firebaseapp.com",
-      databaseURL: "https://family-97404.firebaseio.com",
-      projectId: "family-97404",
-      storageBucket: "family-97404.appspot.com",
-      messagingSenderId: "991582671358"
-    };
-    firebase.initializeApp(config);
-  }
-  render() {
+function App() {
     return (
-      <div className="container">
-        <Header title="Firebase Chat" />
-        <div className="columns">
-          <div className="column is-3"></div>
-          <div className="column is-6">
-            <MessageList db={firebase} />
-          </div>
-        </div>
-        <div className="columns">
-          <div className="column is-3"></div>
-          <div className="column is-6">
-            <MessageBox db={firebase} />
-          </div>
-        </div>
-      </div>
+      <Router>
+
+        <Route exact path="/" component={Main} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/chat" component={Chat} />
+
+      </Router>
     );
   }
-}
+
 
 export default App;
