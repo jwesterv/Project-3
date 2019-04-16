@@ -7,13 +7,24 @@ function About() {
         <div className="view">
 
             <div className="container">
-                <div className="about-text">
-                    <h1>
 
-                    </h1>
-                    <p>
 
-                    </p>
+                <div className="row">
+
+                    <div className="col-sm"></div>
+
+                    <div className="col-sm">
+                    
+                    <div className="about-text">
+                    
+                    <h1 className="title">About Us</h1>
+
+                    </div>
+
+                    </div>
+
+                    <div className="col-sm"></div>
+
                 </div>
 
                 <div className="diana">

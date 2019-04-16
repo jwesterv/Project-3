@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 // import "./App.css";
 import Main from "./pages/Main/Main";
 import About from "./pages/About/About";
-import Chat from "./pages/Chat"
+// import Chat from "./pages/Chat"
 
 function App() {
     return (
@@ -11,7 +11,7 @@ function App() {
 
         <Route exact path="/" component={Main} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/chat" component={Chat} />
+        {/* <Route exact path="/chat" component={Chat} /> */}
 
       </Router>
     );
