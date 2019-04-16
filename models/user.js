@@ -9,9 +9,7 @@
 //         phone_number: DataTypes.STRING,
 //         email: DataTypes.STRING,
 //         dob: DataTypes.DATE,
-//         confirmedBy: DataTypes.STRING,
-//         createdAt: DataTypes.DATE,
-//         updatedAt: DataTypes.DATE
+//         confirmedBy: DataTypes.STRING
 //     },
 //         {
 //             freezeTableName: true

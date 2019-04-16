@@ -4,9 +4,7 @@
 //         familyName: DataTypes.STRING,
 //         accessCode: DataTypes.INTEGER,
 //         numuUsers: DataTypes.INTEGER,
-//         creator: DataTypes.STRING,
-//         createdAt: DataTypes.DATE,
-//         updatedAt: DataTypes.DATE
+//         creator: DataTypes.STRING
 //     },
 //     {
 //     freezeTableName: true
