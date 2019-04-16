@@ -7,7 +7,7 @@ import "./style.css"
 
 function Calendar() {
     return (
-        <div className="Calendar">
+        <div className="App">
         <header>
           <div id="logo">
             {/* <span className="icon">date_range</span> */}
