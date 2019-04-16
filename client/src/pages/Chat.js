@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import firebase from 'firebase';
-import MessageList from './components/MessageList';
-import Header from './components/Header';
-import MessageBox from './components/MessageBox';
+import MessageList from '../components/Messagelist/MessageList';
+import Header from '../components/Header/Header';
+import MessageBox from '../components/MessageBox/MessageBox';
 
 // import logo from "./logo.svg";
 
