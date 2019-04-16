@@ -4,6 +4,11 @@ import "./App.css";
 import MessageList from './components/MessageList';
 import Header from './components/Header';
 import MessageBox from './components/MessageBox';
+import Button from 'react-bootstrap/Button';
+import ProfileCreate from './components/Profile/ProfileCreate';
+import ProfileJoin from './components/Profile/ProfileJoin';
+
+
 
 // import logo from "./logo.svg";
 
@@ -21,6 +26,8 @@ class App extends Component {
     };
     firebase.initializeApp(config);
   }
+
+
   render() {
     return (
       <div className="container">
@@ -36,6 +43,12 @@ class App extends Component {
           <div className="column is-6">
             <MessageBox db={firebase} />
           </div>
+        </div>
+        <div className="profile">
+        <h1 align="center">Create Family</h1>
+          <ProfileCreate />
+          <h1 align="center">Join Family</h1>
+          <ProfileJoin />
         </div>
       </div>
     );
