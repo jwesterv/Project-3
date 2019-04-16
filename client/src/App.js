@@ -1,24 +1,19 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
+import Main from "./pages/Main/Main";
+import About from "./pages/About/About";
 
-
-class App extends Component {
-  render() {
+function App() {
     return (
-      //Background image "pending"
-      <div className="view">
-      {/*Container to hold and center logo and buttons in page*/}
-        <div className="container">
-        {/*Logo made but needs to be made available in vector*/}
-          <div className="logo"></div>
-          {/*Buttons to navigate to pages, no routes yet*/}
-          <button className="btn btn-rounded btn-outline-light btn-primary">Create</button>
-          <button className="btn btn-rounded btn-outline-light btn-primary">Join</button>
-        </div>
-      </div>
+      <Router>
 
+        <Route exact path="/" component={Main} />
+        <Route exact path="/about" component={About} />
+
+      </Router>
     );
   }
-}
+
 
 export default App;

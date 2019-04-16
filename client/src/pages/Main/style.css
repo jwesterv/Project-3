@@ -32,13 +32,3 @@ div.view {
   margin: 5px;
   position: center
 }
-
-html,
-body,
-#root,
-#root > div,
-div[data-reactroot] {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
