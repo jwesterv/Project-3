@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css"
 
 function Main() {
      return (
@@ -15,7 +16,7 @@ function Main() {
               <div className="col-sm"></div>
   
               <div className="col-sm">
-                <div className="logo">
+                <div className="logo-box">
   
                   <h1 className="logo">FAM.ily</h1>
                 </div>
