@@ -25,7 +25,7 @@ function About() {
 
                         <div className="about-title">
 
-                            <h1 className="title">About Us</h1>
+                            <h1 className="title">Fam.<b>ILY</b></h1>
 
                         </div>
 
@@ -42,7 +42,21 @@ function About() {
                     <div className="col-sm-8">
 
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                            Connecting through your family through the world made easier
+                        </p>
+
+                        <p>
+                            Simplistic enough for the grandparents to use and functionality for everyone in the family to connect or reconnect.
+                            This project was started to bring a way for the family to connect with one another without the hassle
+                            or complications that other social media platforms have.
+                        </p>
+
+                        <p>
+                            Chat room for the cousins secret birthday celebration? Have everyone except him
+                        </p>
+
+                        <p>
+                            Forgot the date of your aunt's birthday? Look at the shared calendar
                         </p>
 
                     </div>
@@ -51,12 +65,121 @@ function About() {
 
                 </div>
 
-                <div className="row">
+                {/* dev container */}
+                <div className="row diana">
 
-                
-                
+                    <div className="col-sm-2">
+
+                    </div>
+
+                    <div className="col-sm-3">
+                    {/* picture */}
+                    </div>
+
+                    <div className="col-sm-5">
+
+
+                    </div>
+
+                    <div className="col-sm-2">
+
+
+                    </div>
+
+                    {/* dev container */}
+                    <div className="row don">
+
+                        <div className="col-sm-2">
+
+                        </div>
+
+                        <div className="col-sm-3">
+                        {/* picture */}
+                        </div>
+
+                        <div className="col-sm-5">
+
+
+                        </div>
+
+                        <div className="col-sm-2">
+
+
+                        </div>
+
+                    </div>
+
+                    {/* dev container */}
+                    <div className="row elodie">
+
+                        <div className="col-sm-2">
+
+                        </div>
+
+                        <div className="col-sm-3">
+                        {/* picture */}
+                        </div>
+
+                        <div className="col-sm-5">
+
+
+                        </div>
+
+                        <div className="col-sm-2">
+
+
+                        </div>
+
+                    </div>
+
+                    {/* dev container */}
+                    <div className="row joanna">
+
+                        <div className="col-sm-2">
+
+                        </div>
+
+                        <div className="col-sm-3">
+                        {/* picture */}
+                        </div>
+
+                        <div className="col-sm-5">
+
+
+                        </div>
+
+                        <div className="col-sm-2">
+
+
+                        </div>
+
+                    </div>
+
+                    {/* dev container */}
+                    <div className="row james">
+
+                        <div className="col-sm-2">
+
+                        </div>
+
+                        <div className="col-sm-3">
+                        {/* picture */}
+                        </div>
+
+                        <div className="col-sm-5">
+
+
+                        </div>
+
+                        <div className="col-sm-2">
+
+
+                        </div>
+
+                    </div>
+
                 </div>
-                
+
             </div>
 
         </div>
