@@ -7,6 +7,7 @@ import About from "./pages/About/About";
 import ProfileCreate from "./pages/ProfileCreate/ProfileCreate";
 import ProfileJoin from "./pages/ProfileJoin/ProfileJoin";
 
+
 function App() {
     return (
       <Router>
@@ -16,6 +17,7 @@ function App() {
         {/* <Route exact path="/chat" component={Chat} /> */}
         <Route exact path="/join" component={ProfileJoin} />
         <Route exact path="/create" component={ProfileCreate} />
+        
 
       </Router>
     );
