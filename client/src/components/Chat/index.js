@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import firebase from 'firebase';
-import MessageList from '../components/Messagelist/MessageList';
-import Header from '../components/Header/Header';
-import MessageBox from '../components/MessageBox/MessageBox';
-
-// import logo from "./logo.svg";
+// import './App.css';
+import MessageList from './Messagelist/MessageList';
+import Header from './Header/Header';
+import MessageBox from './Messagebox/MessageBox';
 
 
 class Chat extends Component {
@@ -22,6 +21,8 @@ class Chat extends Component {
   }
   render() {
     return (
+
+
       <div className="container">
         <Header title="Firebase Chat" />
         <div className="columns">
@@ -35,8 +36,9 @@ class Chat extends Component {
           <div className="column is-6">
             <MessageBox db={firebase} />
           </div>
-        </div>        
+        </div>
       </div>
+
     );
   }
 }
