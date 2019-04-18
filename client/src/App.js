@@ -6,6 +6,7 @@ import About from "./pages/About/About";
 import Chat from "./components/Chat/index"
 import ProfileCreate from "./pages/ProfileCreate/ProfileCreate";
 import ProfileJoin from "./pages/ProfileJoin/ProfileJoin";
+import WishList from "./components/WishForm/WishForm"
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/chat" component={Chat} />
         <Route exact path="/join" component={ProfileJoin} />
         <Route exact path="/create" component={ProfileCreate} />
+        <Route exact path="/wishlist" component={WishList} />
 
       </Router>
     );
