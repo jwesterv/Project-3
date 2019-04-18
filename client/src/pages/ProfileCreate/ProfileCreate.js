@@ -119,7 +119,7 @@ export default class ProfileCreate extends React.Component {
                 </div>
                 <div className="form-group">
                  <input 
-                name="wishLIst"
+                name="wishList"
                 placeholder="Wish List" 
                 value={this.state.wishList} 
                 onChange={e => this.change(e)}
