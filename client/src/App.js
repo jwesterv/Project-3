@@ -6,6 +6,7 @@ import About from "./pages/About/About";
 import Chat from "./components/Chat/index"
 import ProfileCreate from "./pages/ProfileCreate/ProfileCreate";
 import ProfileJoin from "./pages/ProfileJoin/ProfileJoin";
+import Calendar from "./components/Calendar/index";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/chat" component={Chat} />
         <Route exact path="/join" component={ProfileJoin} />
         <Route exact path="/create" component={ProfileCreate} />
+        <Route exact path="/calendar" component={Calendar} />
         
 
       </Router>
