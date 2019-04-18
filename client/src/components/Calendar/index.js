@@ -1,13 +1,13 @@
-import React from "react";
+import React, { Component } from 'react';
 
-import Calendar from "../../components/Calendar"
+import Calendarmodel from "./CalendarModel/Calendarmodel"
 
 import "./style.css"
 
-
-function Calendar() {
+class Calendar extends Component {
+  render() {
     return (
-        <div className="App">
+      <div className="App">
         <header>
           <div id="logo">
             {/* <span className="icon">date_range</span> */}
@@ -17,11 +17,12 @@ function Calendar() {
           </div>
         </header>
         <main>
-          <Calendar />
+          <Calendarmodel />
         </main>
-        
+
       </div>
     )
+  }
 }
 
 export default Calendar;
