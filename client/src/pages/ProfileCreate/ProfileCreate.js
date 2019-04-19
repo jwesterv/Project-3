@@ -1,7 +1,17 @@
 import React, {Component} from 'react';
 import "./style.css"
+import axios from 'axios';
+
 
 export default class ProfileCreate extends React.Component {
+    //define methods here
+loginMethods = {
+    register: () => axios.post("/auth/register", {
+        name: this.state.firstName,
+        email: this.state.email,
+        password: this.state.password
+    })
+};
     state = {
         firstName: "",
         lastName: "",
@@ -45,7 +55,7 @@ export default class ProfileCreate extends React.Component {
     render() {
         return (
             <div align="center">
-            <form>
+            <form onSubmit={this.loginMethods.register()}>
                 <div className="form-group">
                 <input 
                 name="firstName"

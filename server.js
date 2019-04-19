@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser")
 const authRoutes = require("./routes/auth.routes");
 const htmlRoutes = require("./routes/html.routes");
 const path = require("path");
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 const app = express();
 const models = require("./models")
 
@@ -42,7 +42,7 @@ if (process.env.NODE_ENV === "production") {
 app.use("/auth", authRoutes);
 app.use(auth);
 app.use(htmlRoutes);
-require("./routes/companyRoutes")(app);
+
 
 
 // Send every other request to the React app
