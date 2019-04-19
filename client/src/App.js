@@ -7,12 +7,14 @@ import Chat from "./components/Chat/index"
 import ProfileCreate from "./pages/ProfileCreate/ProfileCreate";
 import ProfileJoin from "./pages/ProfileJoin/ProfileJoin";
 import Calendar from "./components/Calendar/index";
+import NavBar from "./components/NavBar/index";
+import './App.css';
 
 
 function App() {
     return (
       <Router>
-
+ <NavBar />
         <Route exact path="/" component={Main} />
         <Route exact path="/about" component={About} />
         <Route exact path="/chat" component={Chat} />
