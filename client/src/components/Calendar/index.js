@@ -19,6 +19,16 @@ class Calendar extends Component {
         <main>
           <Calendarmodel />
         </main>
+        <form className="calendar-input" autoComplete="off">
+        <TextField
+        id="outlined-event"
+        label="Event"
+        className="event"
+        value={this.state.event}
+        
+        />
+
+        </form>
 
       </div>
     )
