@@ -32,9 +32,13 @@
     "@vuikit/icons": "^0.8.1",
     "@vuikit/theme": "^0.8.1",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "axios": "^0.18.0",
     "cookie-parser": "^1.4.4",
 =======
+=======
+    "axios": "^0.18.0",
+>>>>>>> 0d766642a3b9509fe57c4718c78839bab0d29a66
     "cookie-parser": "^1.4.4",
     "date-fns": "^1.30.1",
 >>>>>>> c96514e0774a7fde48b6f735d55ba0aa500d05e1

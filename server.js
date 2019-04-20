@@ -1,20 +1,18 @@
 //Dependencies
 //=====================
-
 require("dotenv").config();
 const express = require("express");
 const jwt = require('express-jwt');
-const cookieParser = require("cookie-parser")
-const authRoutes = require("./routes/auth.routes");
-const htmlRoutes = require("./routes/html.routes");
-const path = require("path");
-const PORT = process.env.PORT || 3002;
+const cookieParser = require("cookie-parser");
+const PORT = process.env.PORT || 3001;
 const app = express();
-const models = require("./models")
-const axios = require("axios")
 
-//variables
-//=====================
+const axios = require("axios")
+const models = require("./models");
+const routes = require("./routes");
+
+
+
 var auth = jwt({
   secret: process.env.JWT_SECRET,
   getToken: function fromHeaderOrQuerystring (req) {
@@ -26,6 +24,8 @@ var auth = jwt({
     return null;
   }
 });
+
+
 
 
 // Define middleware here
@@ -45,27 +45,15 @@ if (process.env.NODE_ENV === "production") {
 
 
 // Routes
-//=========================
-app.use("/auth", authRoutes);
-app.use(auth);
-app.use(htmlRoutes);
+//===================================
+app.use(routes);
 
-require("./routes/api-routes.js")(app);
-
-
-// Send every other request to the React app
-// Define any API routes before this runs
-
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
 
 
 // Start the server
 //===================
+const syncOptions = { force: false };
 
-var syncOptions = { force: false };
 
 // In test, set syncOptions.force to true
 

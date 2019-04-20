@@ -8,17 +8,19 @@ module.exports = function (sequelize, DataTypes) {
                 isEmail: true
             }
         },
-        name: DataTypes.STRING,
+        username: DataTypes.STRING,
         salt: DataTypes.STRING,
         hash: DataTypes.STRING,
         address: DataTypes.STRING,
+        zipcode: DataTypes.STRING,
         phone_number: DataTypes.STRING,
         familyid: DataTypes.STRING,
         isConfirmed: DataTypes.BOOLEAN,
         firstname: DataTypes.STRING,
         lastname: DataTypes.STRING,
         dob: DataTypes.DATE,
-        confirmedBy: DataTypes.STRING
+        confirmedBy: DataTypes.STRING,
+        wishid: DataTypes.STRING
     },
     {
                     freezeTableName: true
