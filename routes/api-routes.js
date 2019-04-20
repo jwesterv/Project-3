@@ -1,5 +1,4 @@
 var db = require("../models");
-
 // Routes
 // =============================================================
 module.exports = function (app) {
@@ -26,7 +25,6 @@ module.exports = function (app) {
       text: req.body.text,
       
     }).then(function (dbWish) {
-      alert("Your wish has actually been submitted!;)")
       // callback function - access new wish 
       res.json(dbWish);
     });
@@ -34,14 +32,19 @@ module.exports = function (app) {
 
   app.post("/api/profile", function (req, res) {
     console.log(req.body);
-    //insert wish into table
+    
     db.Profile.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       birthday: req.body.birthday,
-      phone: req.body.phone,
+      phone: req.body.phone,      
+      email: req.body.email,
       address: req.body.address,
-      email: req.body.email
+      city: req.body.city,
+      st: req.body.st,
+      zip: req.body.zip
     }).then(function (dbProfile) {
-      // callback function - access new wish 
+      
       res.json(dbProfile);
     });
   });
