@@ -4,7 +4,7 @@
 const path = require("path");
 const router = require("express").Router();
 const htmlRoutes = require("./html.routes");
-const apiRoutes = require("./api/other.routes");
+const apiRoutes = require("./api/api-routes");
 const authRoutes = require("./auth/auth.routes");
 
 
