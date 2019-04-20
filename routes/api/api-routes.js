@@ -1,11 +1,15 @@
-var db = require("../models");
+const express = require("express");
+const router = express.Router();
+const famController = require("../../controllers/famController");
+
+var db = require("../../models");
 // Routes
 // =============================================================
-module.exports = function (app) {
+
  
 
   //     GET ROUTES 
-    app.get("/api/wishes", function (req, res) {
+    router.get("/wishes", function (req, res) {
       
         db.Wish.findAll({
             
@@ -18,7 +22,7 @@ module.exports = function (app) {
 
 
   //POST ROUTES
-  app.post("/api/wishes", function (req, res) {
+  router.post("/wishes", function (req, res) {
     console.log(req.body);
     //insert wish into table
     db.Wish.create({
@@ -30,7 +34,7 @@ module.exports = function (app) {
     });
   });
 
-  app.post("/api/profile", function (req, res) {
+  router.post("/profile", function (req, res) {
     console.log(req.body);
     
     db.Profile.create({
@@ -51,7 +55,7 @@ module.exports = function (app) {
 
 
 
-}
+  module.exports = router;
 
 
 

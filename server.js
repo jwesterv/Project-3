@@ -11,8 +11,6 @@ const axios = require("axios")
 const models = require("./models");
 const routes = require("./routes");
 
-
-
 var auth = jwt({
   secret: process.env.JWT_SECRET,
   getToken: function fromHeaderOrQuerystring (req) {
@@ -36,12 +34,6 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
-
-
-
-
-
 
 
 // Routes

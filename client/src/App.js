@@ -6,16 +6,13 @@ import About from "./pages/About/About";
 import Chat from "./components/Chat/index"
 import ProfileCreate from "./pages/ProfileCreate/ProfileCreate";
 import ProfileJoin from "./pages/ProfileJoin/ProfileJoin";
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import WishList from "./components/WishForm/WishForm"
-=======
-=======
+import Profile from "./components/ProfileForm/ProfileForm"
 import PrivateRoute from './components/PrivateRoute/index'
->>>>>>> 0d766642a3b9509fe57c4718c78839bab0d29a66
+
 import Calendar from "./components/Calendar/index";
 
->>>>>>> c96514e0774a7fde48b6f735d55ba0aa500d05e1
 
 function App() {
     return (
@@ -28,6 +25,7 @@ function App() {
         <Route exact path="/create" component={ProfileCreate} />
 
         <Route exact path="/wishlist" component={WishList} />
+        <Route exact path="/profile" component={Profile} />
 
         <Route exact path="/calendar" component={Calendar} />
         
