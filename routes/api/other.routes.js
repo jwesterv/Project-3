@@ -1,15 +1,22 @@
+//These are protected Routes
+
 const express = require("express");
 const router = express.Router();
-
-
-
-// const booksController = require("../../../../../19week-19/day2/reactRouter/controllers/booksController");
+const famController = require("../../controllers/famController");
 
 
 router.get("/other", function(req, res){
-  console.log("test")
+  console.log("test") // test the route works
    
 });
+
+
+//add additional protected routes here
+
+
+
+
+///this was the class example using books
 // Matches with "/api/books"
 // router.route("/")
 //   .get(booksController.findAll)

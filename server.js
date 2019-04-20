@@ -3,16 +3,13 @@
 require("dotenv").config();
 const express = require("express");
 const jwt = require('express-jwt');
-const cookieParser = require("cookie-parser")
-// const authRoutes = require("./routes/auth.routes");
-// const htmlRoutes = require("./routes-bak/html.routes");
-const path = require("path");
+const cookieParser = require("cookie-parser");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const models = require("./models");
-
-//new
 const routes = require("./routes");
+
+
 
 var auth = jwt({
   secret: process.env.JWT_SECRET,
@@ -41,29 +38,14 @@ if (process.env.NODE_ENV === "production") {
 
 // Routes
 //===================================
-// require("./routes/auth.routes");
-// app.use("/auth", authRoutes);
 app.use(routes);
-// app.use(htmlRoutes);
-
-
-
-// Send every other request to the React app
-// Define any API routes before this runs
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
-
-const router = require("express").Router();
-// const booksController = require("../../../../../19week-19/day2/reactRouter/controllers/booksController");
-
 
 
 
 // Start the server
 //===================
-var syncOptions = { force: false };
+const syncOptions = { force: false };
+
 
 // In test, set syncOptions.force to true
 

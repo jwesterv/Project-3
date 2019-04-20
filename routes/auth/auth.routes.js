@@ -2,9 +2,9 @@ var express = require("express");
 var router = express.Router();
 var helpers = require("./helpers/auth.helpers");
 var models = require("../../models");
-var crypto = require("crypto");
+// var crypto = require("crypto");
 var jwt = require('jsonwebtoken');
-// const app = express();
+
 
 
 
@@ -29,7 +29,7 @@ console.log(user);
 })
 
 router.post("/login", function(req, res) {
-    console.log("test")
+   
     if(!req.body.password || !req.body.email) {
         return res.status(400).json({msg: new Error("Email and Password are required.")});
     }
