@@ -3,8 +3,10 @@ module.exports = function (sequelize, DataTypes) {
         id:{type: DataTypes.STRING, primaryKey: true },
         familyid: DataTypes.STRING,
         event: DataTypes.STRING,
-        eventDate: DataTypes.DATE,
-        eventTime: DataTypes.TIME
+        eventStart: DataTypes.DATE,
+        eventEnd: DataTypes.DATE,
+        eventTime: DataTypes.TIME,
+        eventDescription: DataTypes.STRING
        },
         {
             freezeTableName: true

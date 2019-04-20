@@ -1,16 +1,19 @@
 var express = require("express");
 var router = express.Router();
 var helpers = require("./helpers/auth.helpers");
-var models = require("../models");
-var crypto = require("crypto");
+var models = require("../../models");
+// var crypto = require("crypto");
 var jwt = require('jsonwebtoken');
 
+
+
+
 router.post("/register", function(req, res) {
-    if(!req.body.name || !req.body.password || !req.body.email) {
+    if(!req.body.username || !req.body.password || !req.body.email) {
         return res.status(400).json({msg: new Error("Please put all data on body")});
     }
     var user = {
-        name: req.body.name,
+        username: req.body.uername,
         email: req.body.email,
         salt: helpers.getSalt()
     };
@@ -26,8 +29,9 @@ console.log(user);
 })
 
 router.post("/login", function(req, res) {
+   
     if(!req.body.password || !req.body.email) {
-        return res.status(400).json({msg: new Error("Please put all data on body")});
+        return res.status(400).json({msg: new Error("Email and Password are required.")});
     }
     models.User.findOne({
         where : {
@@ -42,13 +46,13 @@ router.post("/login", function(req, res) {
                 token: jwt.sign({
                     exp: parseInt(expiry.getTime() / 1000),
                     userID: resp.id,
-                    name: resp.name,
+                    username: resp.username,
                     email: resp.email
                 }, process.env.JWT_SECRET)
             });
         }
         else {
-            throw new Error("password no matchy");
+            throw new Error("Username and/or Password are incorrect");
         }
     })
     .catch(function(err) {

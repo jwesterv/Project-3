@@ -1,14 +1,20 @@
+//html routes can be added here (non-protected)
+
 var express = require("express");
 var router = express.Router();
 
 router.get("/", function(req, res) {
-    console.log("hello")
+    console.log("test") //test the route works
    
 })
 
-router.get("/user", function(req, res) {
-    console.log("user")
-   
-})
+
+
+// Send every other request to the React app
+// Define any API routes before this runs
+
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./client/index.html"));
+// });
 
 module.exports = router;
