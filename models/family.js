@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
         id:{type: DataTypes.STRING, primaryKey: true },
         familyName: DataTypes.STRING,
         accessCode: DataTypes.INTEGER,
-        numuUsers: DataTypes.INTEGER,
+        numUsers: DataTypes.INTEGER,
         creator: DataTypes.STRING,
         createdAt: DataTypes.DATE,
         updatedAt: DataTypes.DATE

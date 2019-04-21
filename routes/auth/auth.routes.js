@@ -23,6 +23,7 @@ router.post("/register", function(req, res) {
 
     var family = {
         accesscode: helpers.getAccessCode(),
+        familyName: req.body.familyName
 
     };
 console.log(family.accesscode);
