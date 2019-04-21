@@ -7,7 +7,6 @@ var db = require("../../models");
 // =============================================================
 
  
-
   //     GET ROUTES 
     router.get("/wishes", function (req, res) {
       
@@ -18,7 +17,11 @@ var db = require("../../models");
         });
     });
 
-   
+
+//:family/chat option
+   router.get("/chat/:family/", function (req, res){
+     //pulls chat from firebase based on familyID and renders to react
+   })
 
 
   //POST ROUTES

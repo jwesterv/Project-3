@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // Import components
+import Login from "./components/Login/login";
 import { PrivateRoute } from './components/PrivateRoute/index'
 import Chat from "./components/Chat/index";
 import WishList from "./components/WishForm/WishForm"
@@ -29,9 +30,11 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
+          <Route path="/login" exact component={Login} />
           <Route exact path="/" component={Main} />
           <Route exact path="/about" component={About} />
           <PrivateRoute exact path="/chat" component={Chat} />
+          <Route exact path="/publicchat" component={Chat} />
           <Route exact path="/join" component={ProfileJoin} />
           <Route exact path="/create" component={ProfileCreate} />
           <Route exact path="/wishlist" component={WishList} />

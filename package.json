@@ -41,6 +41,7 @@
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.0",
     "mysql2": "^1.6.5",
+    "react-bootstrap": "^1.0.0-beta.8",
     "react-router-dom": "^5.0.0",
     "sequelize": "^5.2.8",
     "sequelize-cli": "^5.4.0",

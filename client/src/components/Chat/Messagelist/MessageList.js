@@ -5,10 +5,14 @@ import _ from 'lodash';
 class MessageList extends Component {
   constructor(props){
     super(props);
+    //reach out to sql db and make a query to get fam id and chat id
     this.state = {
-      messages: []
+      messages: [],
+      familyID: 'famtest',
+      chatID: 'chatID'
+      
     };
-    let app = this.props.db.database().ref('messages');
+    let app = this.props.db.database().ref('/chats/chat/' + this.state.familyID + '/' + this.state.chatID);
     app.on('value', snapshot => {
       this.getData(snapshot.val());
     });
@@ -25,7 +29,8 @@ class MessageList extends Component {
                       })
                       .value();
       this.setState({
-        messages: messages
+        messages: messages,
+
       });
   }
 
@@ -35,6 +40,7 @@ class MessageList extends Component {
         <div className="card">
           <div className="card-content">
             <Message message = {message.message} />
+
           </div>
         </div>
       )
