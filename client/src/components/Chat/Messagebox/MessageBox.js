@@ -13,15 +13,23 @@ class MessageBox extends Component {
   }
   onChange(e){
       this.setState({
-        message: e.target.value
+        message: e.target.value,
+        userID: 'userID',
+        familyID: 'familyID',
+        chatID: 'chatID'
+
       });
   }
   onKeyup(e){
     if(e.keyCode === 13 && trim(e.target.value) !== ''){
       e.preventDefault();
-      let dbCon = this.props.db.database().ref('/messages');
+      // let dbCon = this.props.db.database().ref('/messages');
+
+      let dbCon = this.props.db.database().ref('/chats/chat/' + 'famtest/' + 'chatID');
       dbCon.push({
         message: trim(e.target.value)
+        ,date: Date.now()
+        ,userID: 'userID'
       });
       this.setState({
         message: ''
