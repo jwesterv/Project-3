@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import dateFns from "date-fns";
 
-class Calendarmodel extends Component {
+class Calendar extends Component {
   state = {
     currentMonth: new Date(),
     selectedDate: new Date()
@@ -117,4 +117,4 @@ class Calendarmodel extends Component {
   }
 }
 
-export default Calendarmodel;
+export default Calendar;

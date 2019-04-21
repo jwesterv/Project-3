@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import Calendarmodel from "./CalendarModel/Calendarmodel"
+import Calendar from "./Calendar/Calendar"
 
 import "./style.css"
 
-class Calendar extends Component {
+class CalendarComponent extends Component {
   render() {
     return (
       <div className="App">
@@ -17,7 +17,7 @@ class Calendar extends Component {
           </div>
         </header>
         <main>
-          <Calendarmodel />
+          <Calendar />
         </main>
 
       </div>
@@ -25,5 +25,5 @@ class Calendar extends Component {
   }
 }
 
-export default Calendar;
+export default CalendarComponent;
 
