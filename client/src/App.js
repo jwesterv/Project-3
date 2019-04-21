@@ -46,23 +46,3 @@ export default class App extends Component {
 
 
 
-// function App() {
-//     return (
-//       <Router>
-
-//         <Route exact path="/" component={Main} />
-//         <Route exact path="/about" component={About} />
-//         <PrivateRoute exact path="/chat" component={Chat} />
-//         <Route exact path="/join" component={ProfileJoin} />
-//         <Route exact path="/create" component={ProfileCreate} />
-//         <Route exact path="/wishlist" component={WishList} />
-//         <Route exact path="/profile" component={Profile} />
-//         <Route exact path="/calendar" component={Calendar} />
-
-
-//       </Router>
-//     );
-//   }
-
-
-// export default App;

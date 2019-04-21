@@ -4,8 +4,10 @@ import { Redirect, Route } from 'react-router-dom'
 // import privateHelpers from './helpers/auth.helper'
 
 export const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={(props) => (
-    localStorage.getItem("token")
+  <Route 
+    {...rest} 
+    render={(props) => (
+      localStorage.getItem("token")
     // ,privateHelpers.isLoggedIn()
       ? <Component {...props} />
       : <Redirect to={{
