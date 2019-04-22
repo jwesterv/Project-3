@@ -33,12 +33,12 @@ div.view {
   position: center
 }
 
-html,
+hhtml,
 body,
 #root,
 #root > div,
 div[data-reactroot] {
-  height: 100%;
+  height: auto;
   padding: 0;
   margin: 0;
 }
