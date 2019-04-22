@@ -1,67 +1,63 @@
-import React from "react";
-import "./style.css"
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+// import Header from '../components/Header';
 
-function Main() {
-     return (
-        //Background image "pending"
-        <div className="view">
-          {/*Container to hold and center logo and buttons in page*/}
-          <div className="container-fluid">
-          </div>
-          <div className="container">
-  
-            {/*Logo made but needs to be made available in vector*/}
-            <div className="row">
-  
-              <div className="col-sm"></div>
-  
-              <div className="col-sm">
-                <div className="logo-box">
-  
-                  <h1 className="logo">FAM.ily</h1>
-                </div>
-              </div>
-  
-              <div className="col-sm"></div>
-  
-            </div>
-  
-            {/*Buttons to navigate to pages, no routes yet*/}
-            <div className="row">
-  
-              <div className="col-sm"></div>
-  
-              <div className="col-sm">
-  
-                <button className="btn btn-rounded btn-outline-light btn-primary"> Create </button>
-  
-                <button className="btn btn-rounded btn-outline-light btn-primary"> Join </button>
-  
-              </div>
-  
-  
-              <div className="col-sm"></div>
-  
-            </div>
-            <div className="row">
-  
-              <div className="col-sm"></div>
-  
-              <div className="col-sm">
-  
-                <p className="about">About</p>
-  
-              </div>
-  
-              <div className="col-sm"></div>
-  
-            </div>
-  
-          </div >
-  
-        </div>
-  
-      );
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+  contain: {
+    height: 500
+  },
+
+  button: {
+    margin: theme.spacing.unit,
+  },
+
+  input: {
+    display: 'none',
+  },
+});
+
+function CenteredGrid(props) {
+  const { classes } = props;
+
+  return (
+    <div className={classes.root}>
+    {/* <Header /> */}
+      <Grid container spacing={24}>
+        <Grid className={classes.contain}  item xs={12}>
+          <Paper className={classes.paper}>
+            <Button variant="outlined" color="primary" className={classes.button}>
+              Create
+</Button>
+            <Button variant="outlined" color="primary" className={classes.button}>
+              Join
+</Button>
+
+</Paper>
+        </Grid>
+
+
+      </Grid>
+    </div>
+  );
 }
 
-export default Main;
+CenteredGrid.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+
+
+export default withStyles(styles)(CenteredGrid);
