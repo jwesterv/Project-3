@@ -26,7 +26,7 @@ class Calendar extends Component {
         <form className="calendar-input" autoComplete="off">
           <TextField
             id="outlined-event"
-            label="Event"
+            label="Event Name"
             className="event"
             value=""
             margin="normal"

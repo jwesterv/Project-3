@@ -12,28 +12,31 @@ import Profile from "./components/ProfileForm/ProfileForm"
 import PrivateRoute from './components/PrivateRoute/index'
 
 import Calendar from "./components/Calendar/index";
+import Login from "./components/Login/index"
 
 
 function App() {
-    return (
-      <Router>
+  return (
+    <Router>
 
-        <Route exact path="/" component={Main} />
-        <Route exact path="/about" component={About} />
-        <PrivateRoute exact path="/chat" component={Chat} />
-        <Route exact path="/join" component={ProfileJoin} />
-        <Route exact path="/create" component={ProfileCreate} />
+      <Route exact path="/" component={Main} />
+      <Route exact path="/about" component={About} />
+      <PrivateRoute exact path="/chat" component={Chat} />
+      <Route exact path="/join" component={ProfileJoin} />
+      <Route exact path="/create" component={ProfileCreate} />
 
-        <Route exact path="/wishlist" component={WishList} />
-        <Route exact path="/profile" component={Profile} />
+      <Route exact path="/wishlist" component={WishList} />
+      <Route exact path="/profile" component={Profile} />
 
-        <Route exact path="/calendar" component={Calendar} />
-        
+      <Route exact path="/calendar" component={Calendar} />
+
+      <Route exact path="/login" component={Login} />
 
 
-      </Router>
-    );
-  }
+
+    </Router>
+  );
+}
 
 
 export default App;
