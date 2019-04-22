@@ -3,9 +3,9 @@ var authenticationHelpers = {
     getSalt() {
         return crypto.randomBytes(16).toString('hex');
     },
-    getAccessCode() {
-        return crypto.randomBytes(7).toString('hex');
-    },
+    // getAccessCode() {
+    //     return crypto.randomBytes(3).toString('hex');
+    // },
     /**
      * 
      * @param {*} salt 
