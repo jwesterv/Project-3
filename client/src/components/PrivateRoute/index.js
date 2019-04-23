@@ -1,14 +1,14 @@
 import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
 
-// import privateHelpers from './helpers/auth.helper'
+import privateHelpers from './helpers/private.helper'
 
 export const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route 
     {...rest} 
     render={(props) => (
-      localStorage.getItem("token")
-    // ,privateHelpers.isLoggedIn()
+      
+      privateHelpers.isLoggedIn()
       ? <Component {...props} />
       : <Redirect to={{
         pathname: '/login',

@@ -15,7 +15,7 @@ class MessageBox extends Component {
       this.setState({
         message: e.target.value,
         userID: 'userID',
-        familyID: 'familyID',
+        familyID: 'famtest',
         chatID: 'chatID'
 
       });
@@ -25,7 +25,7 @@ class MessageBox extends Component {
       e.preventDefault();
       // let dbCon = this.props.db.database().ref('/messages');
 
-      let dbCon = this.props.db.database().ref('/chats/chat/' + 'famtest/' + 'chatID');
+      let dbCon = this.props.db.database().ref('/chats/chat/' + this.state.familyID + '/' + this.state.chatID);
       dbCon.push({
         message: trim(e.target.value)
         ,date: Date.now()
