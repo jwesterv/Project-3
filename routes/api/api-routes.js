@@ -6,9 +6,14 @@ var db = require("../../models");
 // Routes
 // =============================================================
 
+<<<<<<< HEAD
   //ROUTES FOR WISHES
   //===========================================================
   //GET WISHES
+=======
+ 
+  //     GET ROUTES 
+>>>>>>> 5050243315bebd92e3b6eeaaf20175146f4d080f
     router.get("/wishes", function (req, res) {
       
         db.Wish.findAll({
@@ -18,7 +23,11 @@ var db = require("../../models");
         });
     });
 
-   
+
+//:family/chat option
+   router.get("/chat/:family/", function (req, res){
+     //pulls chat from firebase based on familyID and renders to react
+   })
 
 
   //POST WISHES

@@ -12,14 +12,25 @@ router.post("/register", function(req, res) {
     if(!req.body.username || !req.body.password || !req.body.email) {
         return res.status(400).json({msg: new Error("Please put all data on body")});
     }
+
+
     var user = {
-        username: req.body.uername,
+        username: req.body.username,
+        dob: req.body.dob,
         email: req.body.email,
         salt: helpers.getSalt()
     };
-console.log(user);
+
+    var family = {
+        accesscode: helpers.getAccessCode(),
+        familyName: req.body.familyName
+
+    };
+console.log(family.accesscode);
     user.hash = helpers.getHash(user.salt, req.body.password);
-    models.User.create(user)
+    models.User.create(user);
+
+    models.Family.create(family)
     .then(function(resp) {
         res.status(201).json({msg: "User Created"})
     })

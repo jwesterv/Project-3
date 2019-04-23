@@ -2,9 +2,12 @@ import React, {Component} from 'react';
 
 class Message extends Component {
 
+
+
   render(){
     return (
-      <div>
+      <div data-username={this.props.username}>
+        {this.props.username}
         {this.props.message}
       </div>
     )
