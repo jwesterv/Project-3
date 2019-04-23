@@ -12,25 +12,34 @@ router.post("/register", function(req, res) {
     //     return res.status(400).json({msg: new Error("Please put all data on body")});
     // }
    
-console.log(req.body.username)
+console.log(req.body.username);
+
+var userid = helpers.getUserID();
+
     var user = {
         username: req.body.username,
         dob: req.body.dob,
         email: req.body.email,
-        salt: helpers.getSalt()
+        salt: helpers.getSalt(),
+        userid: userid
     };
 
     var family = {
-        accesscode: helpers.getAccessCode()
-        // ,familyName: req.body.familyName
-
+        accessCode: helpers.getAccessCode()
+        ,familyName: req.body.familyName
+        ,chatid: helpers.getChatID()
+        ,userid: userid
     };
-console.log(family.accesscode);
+
+console.log("user" + family.userid);
+    models.Family.create(family);
+console.log(family.accessCode);
     user.hash = helpers.getHash(user.salt, req.body.password);
     models.User.create(user)
-
-    // models.Family.create(family)
+    
     .then(function(resp) {
+        //connect to firebase here
+        //write to database the familyID and chatID with the same structure as Chat
         res.status(201).json({msg: "User Created"})
     })
     .catch(function(err) {

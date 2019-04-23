@@ -1,12 +1,15 @@
 module.exports = function (sequelize, DataTypes) {
     const Family = sequelize.define("Family", {
-        id:{type: DataTypes.STRING, primaryKey: true },
+        
         familyName: DataTypes.STRING,
-        accessCode: DataTypes.INTEGER,
+        accessCode: DataTypes.STRING,
         numUsers: DataTypes.INTEGER,
         creator: DataTypes.STRING,
         createdAt: DataTypes.DATE,
-        updatedAt: DataTypes.DATE
+        updatedAt: DataTypes.DATE,
+        //for other family chats will need a chatname
+        chatid: DataTypes.STRING,
+        userid: DataTypes.STRING
     },
     {
     freezeTableName: true
