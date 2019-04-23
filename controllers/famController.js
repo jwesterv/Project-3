@@ -1,4 +1,4 @@
-const db = require("../models");
+const models = require("../models");
 
 // Methods for the famController
 //Sequelize will go here

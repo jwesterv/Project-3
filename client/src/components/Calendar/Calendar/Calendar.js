@@ -92,6 +92,10 @@ class Calendar extends Component {
     return <div className="body">{rows}</div>;
   }
 
+  renderEvents()  {
+    
+  }
+
   onDateClick = day => {
     this.setState({
       selectedDate: day
