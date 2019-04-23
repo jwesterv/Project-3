@@ -1,22 +1,28 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 
+//import API from "./API";
 import axios from "axios";
 
 class WishForm extends React.Component {
     constructor(props) {
       super(props);
-      this.state = { value:'', list: [] };
+      this.state = { 
+        
+        text:'', 
+        granted: false,
+        list: [] 
+      };
   
-      this.handleChange = this.handleChange.bind(this);
+      this.handleAddChange = this.handleAddChange.bind(this);
+      //this.handleDeleteChange = this.handleDeleteChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
       
     }
     componentWillMount(){
       this.getWishes()
     }
-    handleChange(event) {
-      this.setState({ value: event.target.value });
+    handleAddChange(event) {
+      this.setState({ text: event.target.value });
     }
 
     getWishes(){
@@ -24,12 +30,13 @@ class WishForm extends React.Component {
     }
   
     handleSubmit(event) {
-      //alert('A wish has been submitted: ' + this.state.value);
+      alert('A wish has been submitted: ' + this.state.text);
       
     
       
       axios.post("/api/wishes", {
-        text: this.state.value,
+        text: this.state.text,
+        granted: this.state.granted
         
       })
       .then((response) => {
@@ -43,21 +50,34 @@ class WishForm extends React.Component {
       event.preventDefault();
     }
   
-    
-         
-        
+    // handleDeleteChange (id) {
+    //   console.log(id)
+    //   axios.delete("/api/wishes/:id", {
+    //     id: id
+
+    //   }).then(() => {this.getWishes()});
       
-    
+    // }
+   
+    deleteWish(id) {
+      axios.delete("/api/wishes/" + id)
+        .then(res => this.getWishes())
+        .catch(err => console.log(err));
+    };
+  
+
   
     
   
     render() {
-      console.log(this.state)
       return (
         <div>
           <br></br>
           <ol>
-          {this.state.list.map(i=><li>{i.text}</li>)}
+          {this.state.list.map(i=><li>{i.text}   <button value={i.id} onClick={() => {this.deleteWish(i.id)}}>X</button></li>)}
+
+     
+          
           
           </ol>
           <br></br>
@@ -66,7 +86,7 @@ class WishForm extends React.Component {
             
             <label> 
               Wishlist:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <input type="text" value={this.state.text} onChange={this.handleAddChange} />
             </label>
             <input type="submit" value="Submit" />
           </form>

@@ -6,9 +6,9 @@ var db = require("../../models");
 // Routes
 // =============================================================
 
- 
-
-  //     GET ROUTES 
+  //ROUTES FOR WISHES
+  //===========================================================
+  //GET WISHES
     router.get("/wishes", function (req, res) {
       
         db.Wish.findAll({
@@ -21,19 +21,52 @@ var db = require("../../models");
    
 
 
-  //POST ROUTES
+  //POST WISHES
   router.post("/wishes", function (req, res) {
     console.log(req.body);
     //insert wish into table
     db.Wish.create({
       text: req.body.text,
-      
+      granted: req.body.granted
     }).then(function (dbWish) {
       // callback function - access new wish 
       res.json(dbWish);
     });
   });
 
+  //DELETE WISHES ROUTE
+  router.delete("/wishes/:id", function(req, res) {
+    // We just have to specify which todo we want to destroy with "where"
+    db.Wish.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbWish) {
+      res.json(dbWish);
+    });
+
+  });
+
+  //UPDATE WISHES (PUT ROUTE)
+router.put("/wishes", function(req, res) {
+    
+    db.Wish.update({
+      text: req.body.text,
+      granted: req.body.granted
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbWish) {
+      res.json(dbWish);
+    });
+  });
+
+
+
+//PROFILE ROUTES
+//===================================================================================
+//GET PROFILES
   router.post("/profile", function (req, res) {
     console.log(req.body);
     
