@@ -1,12 +1,11 @@
 module.exports = function (sequelize, DataTypes) {
-    const Calendar = sequelize.define("User", {
+    const Calandar = sequelize.define("Calendar", {
         id:{type: DataTypes.STRING, primaryKey: true },
         familyid: DataTypes.STRING,
         event: DataTypes.STRING,
-        eventStart: DataTypes.DATE,
-        eventEnd: DataTypes.DATE,
+        eventDate: DataTypes.DATE,
         eventTime: DataTypes.TIME,
-        eventDescription: DataTypes.STRING
+        userid: DataTypes.STRING
        },
         {
             freezeTableName: true

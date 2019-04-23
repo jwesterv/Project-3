@@ -1,4 +1,4 @@
-//These are protected Routes
+//Template to add new routes
 
 const express = require("express");
 const router = express.Router();
