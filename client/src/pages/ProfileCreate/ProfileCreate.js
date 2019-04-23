@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import "./style.css"
 import axios from 'axios';
+import Navbar from '../../components/NavBar'
+
 
 
 export default class ProfileCreate extends React.Component {
@@ -54,7 +56,11 @@ loginMethods = {
 
     render() {
         return (
+            <div>
+                <Navbar />
+         
             <div align="center">
+            
             <form onSubmit={this.loginMethods.register()}>
                 <div className="form-group">
                 <input 
@@ -138,6 +144,7 @@ loginMethods = {
                 <button onClick={(e) => this.onSubmit()}>Submit</button>
 
             </form>
+            </div>
             </div>
         )
     }

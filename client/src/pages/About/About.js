@@ -1,189 +1,50 @@
-import React from "react";
-import "./style.css"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import 'typeface-roboto';
 
-function About() {
+const styles = theme => ({
+    root: {
+        ...theme.mixins.gutters(),
+        paddingTop: theme.spacing.unit * 2,
+        paddingBottom: theme.spacing.unit * 2,
+    },
+});
+
+function PaperSheet(props) {
+    const { classes } = props;
+
     return (
-        //Background, placeholder
-        <div className="view">
-
-            <div className="container">
-
-                <div className="row">
-
-                    <div className="col-sm">
-                        <button className="btn btn-rounded btn-outline-light btn-primary"> Back </button>
-                    </div>
-
-                </div>
-
-
-                <div className="row">
-
-                    <div className="col-sm"></div>
-
-                    <div className="col-sm">
-
-                        <div className="about-title">
-
-                            <h1 className="title">Fam.<b>ILY</b></h1>
-
-                        </div>
-
-                    </div>
-
-                    <div className="col-sm"></div>
-
-                </div>
-
-                <div className="row">
-
-                    <div className="col-sm-2"></div>
-
-                    <div className="col-sm-8">
-
-                        <p>
-                            Connecting through your family through the world made easier
-                        </p>
-
-                        <p>
-                            Simplistic enough for the grandparents to use and functionality for everyone in the family to connect or reconnect.
-                            This project was started to bring a way for the family to connect with one another without the hassle
-                            or complications that other social media platforms have.
-                        </p>
-
-                        <p>
-                            Chat room for the cousins secret birthday celebration? Have everyone except him
-                        </p>
-
-                        <p>
-                            Forgot the date of your aunt's birthday? Look at the shared calendar
-                        </p>
-
-                    </div>
-
-                    <div className="col-sm-2"></div>
-
-                </div>
-
-                {/* dev container */}
-                <div className="row diana">
-
-                    <div className="col-sm-2">
-
-                    </div>
-
-                    <div className="col-sm-3">
-                    {/* picture */}
-                    </div>
-
-                    <div className="col-sm-5">
-
-
-                    </div>
-
-                    <div className="col-sm-2">
-
-
-                    </div>
-
-                    {/* dev container */}
-                    <div className="row don">
-
-                        <div className="col-sm-2">
-
-                        </div>
-
-                        <div className="col-sm-3">
-                        {/* picture */}
-                        </div>
-
-                        <div className="col-sm-5">
-
-
-                        </div>
-
-                        <div className="col-sm-2">
-
-
-                        </div>
-
-                    </div>
-
-                    {/* dev container */}
-                    <div className="row elodie">
-
-                        <div className="col-sm-2">
-
-                        </div>
-
-                        <div className="col-sm-3">
-                        {/* picture */}
-                        </div>
-
-                        <div className="col-sm-5">
-
-
-                        </div>
-
-                        <div className="col-sm-2">
-
-
-                        </div>
-
-                    </div>
-
-                    {/* dev container */}
-                    <div className="row joanna">
-
-                        <div className="col-sm-2">
-
-                        </div>
-
-                        <div className="col-sm-3">
-                        {/* picture */}
-                        </div>
-
-                        <div className="col-sm-5">
-
-
-                        </div>
-
-                        <div className="col-sm-2">
-
-
-                        </div>
-
-                    </div>
-
-                    {/* dev container */}
-                    <div className="row james">
-
-                        <div className="col-sm-2">
-
-                        </div>
-
-                        <div className="col-sm-3">
-                        {/* picture */}
-                        </div>
-
-                        <div className="col-sm-5">
-
-
-                        </div>
-
-                        <div className="col-sm-2">
-
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    )
+        <div>
+         
+            <Paper className={classes.root} elevation={1}>
+                <Typography variant="h5" component="h3">
+                    About Us
+          </Typography>
+                <Typography component="p">
+                    Connecting through your family through the world made easier
+          </Typography>
+                <Typography component="p">
+                    Simplistic enough for the grandparents to use and functionality for everyone in the family to connect or reconnect.
+          This project was started to bring a way for the family to connect with one another without the hassle
+          or complications that other social media platforms have.
+          </Typography>
+                <Typography component="p">
+                    Chat room for the cousins secret birthday celebration? Have everyone except him
+          </Typography>
+
+            <Typography component="p">
+                Forgot the date of your aunt's birthday? Look at the shared calendar
+          </Typography>
+            </Paper>
+        </div >
+    );
 }
 
-export default About;
+PaperSheet.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(PaperSheet);

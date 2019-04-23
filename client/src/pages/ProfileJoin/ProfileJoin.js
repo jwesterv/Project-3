@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import "./style.css"
+import Navbar from '../../components/NavBar'
+
 
 export default class ProfileJoin extends React.Component {
     state = {
@@ -44,6 +46,8 @@ export default class ProfileJoin extends React.Component {
 
     render() {
         return (
+            <div>
+                <Navbar />
             <div align="center">
             <form>
                  <div className="form-group">
@@ -136,6 +140,7 @@ export default class ProfileJoin extends React.Component {
                 <button onClick={(e) => this.onSubmit()}>Submit</button>
 
             </form>
+            </div>
             </div>
         )
     }

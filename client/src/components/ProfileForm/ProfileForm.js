@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-
 import axios from "axios";
+import Navbar from '../../components/NavBar';
+
 
 
 class ProfileForm extends React.Component {
-
-    
-
 
     constructor(props) {
         super(props);
@@ -21,8 +19,7 @@ class ProfileForm extends React.Component {
             city: '',
             st: '',
             zip: '',
-            
-
+           
         }
 
          
@@ -110,11 +107,12 @@ class ProfileForm extends React.Component {
             });
         
     }
+    
     render() {
         return (
             <div>
-            <br></br>
-                {this.state.firstName}
+                <Navbar />
+               {this.state.firstName}
                 <br></br>
                 {this.state.lastName}
                 <br></br>
