@@ -4,22 +4,14 @@ import Calendar from "./Calendar/Calendar"
 
 import TextField from '@material-ui/core/TextField';
 
-
-
 import "./style.css"
 
 class CalendarComponent extends Component {
+
+  
   render() {
     return (
       <div className="App">
-        <header>
-          <div id="logo">
-            {/* <span className="icon">date_range</span> */}
-            <span>
-              FAM.<b>ily</b>
-            </span>
-          </div>
-        </header>
         <main>
           <Calendar />
         </main>
@@ -67,6 +59,7 @@ class CalendarComponent extends Component {
             margin="normal"
             variant="outlined"
           />
+          <button variant ="outlined" className="submit-button" type="submit" value="submit">Submit</button>
 
         </form>
       </div>

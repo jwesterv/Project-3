@@ -6,7 +6,7 @@ import axios from "axios";
 
 class ProfileForm extends React.Component {
 
-    
+
 
 
     constructor(props) {
@@ -21,11 +21,13 @@ class ProfileForm extends React.Component {
             city: '',
             st: '',
             zip: '',
-            
 
         }
 
-         
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
+
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
         this.handleLastNameChange = this.handleLastNameChange.bind(this);
         this.handleBirthdayChange = this.handleBirthdayChange.bind(this);
@@ -83,7 +85,7 @@ class ProfileForm extends React.Component {
 
     };
 
-    
+
 
     handleSubmit(event) {
         console.log(this.state)
@@ -100,7 +102,7 @@ class ProfileForm extends React.Component {
             city: this.state.city,
             st: this.state.st,
             zip: this.state.zip
-            
+
         })
             .then(function (response) {
                 console.log("profile" + response);
@@ -108,12 +110,12 @@ class ProfileForm extends React.Component {
             .catch(function (error) {
                 console.log(error);
             });
-        
+
     }
     render() {
         return (
             <div>
-            <br></br>
+                <br></br>
                 {this.state.firstName}
                 <br></br>
                 {this.state.lastName}
@@ -131,44 +133,44 @@ class ProfileForm extends React.Component {
                 {this.state.st}
                 <br></br>
                 {this.state.zip}
-                
-
-            
-            <br></br>
-
-            <form onSubmit={this.handleSubmit.bind(this)}>
-                <label>First Name:</label>
-                <input type="text" value={this.state.firstName} onChange={this.handleFirstNameChange} />
-                <br></br>
-                <label>Last Name:</label>
-                <input type="text" value={this.state.lastName} onChange={this.handleLastNameChange} />
-                <br></br>
-                <label>Birthday:</label>
-                <input type="text" value={this.state.birthday} onChange={this.handleBirthdayChange} />
-                <br></br>
-                <label>Phone:</label>
-                <input type="text" value={this.state.phone} onChange={this.handlePhoneChange} />
-                <br></br>
-                <label>Email:</label>
-                <input type="text" value={this.state.email} onChange={this.handleEmailChange} />
-                <br></br>
-
-                <label>Address:</label>
-                <input type="text" value={this.state.address} onChange={this.handleAddressChange} />
-                <br></br>
-                <label>City:</label>
-                <input type="text" value={this.state.city} onChange={this.handleCityChange} />
-                <br></br>
-                <label>State:</label>
-                <input type="text" value={this.state.st} onChange={this.handleStChange} />
-                <br></br>
-                <label>Zip Code:</label>
-                <input type="text" value={this.state.zip} onChange={this.handleZipChange} />
-                <br></br>
 
 
-                <input type="submit" value="Submit" />
-            </form>
+
+                <br></br>
+
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <label>First Name:</label>
+                    <input type="text" value={this.state.firstName} onChange={this.handleFirstNameChange} />
+                    <br></br>
+                    <label>Last Name:</label>
+                    <input type="text" value={this.state.lastName} onChange={this.handleLastNameChange} />
+                    <br></br>
+                    <label>Birthday:</label>
+                    <input type="text" value={this.state.birthday} onChange={this.handleBirthdayChange} />
+                    <br></br>
+                    <label>Phone:</label>
+                    <input type="text" value={this.state.phone} onChange={this.handlePhoneChange} />
+                    <br></br>
+                    <label>Email:</label>
+                    <input type="text" value={this.state.email} onChange={this.handleEmailChange} />
+                    <br></br>
+
+                    <label>Address:</label>
+                    <input type="text" value={this.state.address} onChange={this.handleAddressChange} />
+                    <br></br>
+                    <label>City:</label>
+                    <input type="text" value={this.state.city} onChange={this.handleCityChange} />
+                    <br></br>
+                    <label>State:</label>
+                    <input type="text" value={this.state.st} onChange={this.handleStChange} />
+                    <br></br>
+                    <label>Zip Code:</label>
+                    <input type="text" value={this.state.zip} onChange={this.handleZipChange} />
+                    <br></br>
+
+
+                    <input type="submit" value="Submit" />
+                </form>
             </div>
         );
     } c
