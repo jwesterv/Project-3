@@ -37,7 +37,7 @@ const styles = theme => ({
         maxWidth: 1200,
         height: 1200,
         padding: '0 30px',
-        
+  
     },
 
     avatar: {

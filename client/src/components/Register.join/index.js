@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import classNames from 'classnames';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Navbar from '../../components/NavBar'
 
 
 const styles = {
@@ -50,6 +51,8 @@ function RegisterJoin(props) {
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
+    <div>
+      <Navbar />
     <Card className={classes.card}>
       <CardContent>
 
@@ -89,6 +92,7 @@ function RegisterJoin(props) {
         <Button className={classes.button} variant="outlined" color="primary" size="small" >JOIN FAMILY</Button>
       </card>
     </Card>
+    </div>
   );
 }
 
