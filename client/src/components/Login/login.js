@@ -35,9 +35,9 @@ export default class Login extends Component {
       .then((response) => {
         console.log(response);
         localStorage.setItem("token", response.data.token)
-        
+ 
         //redirect to main page (/main)
-
+        window.redirect("/chat")
       })
       .catch(function (error) {
         console.log(error);
