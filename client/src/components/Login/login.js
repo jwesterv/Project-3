@@ -34,9 +34,10 @@ export default class Login extends Component {
       })
       .then((response) => {
         console.log(response);
-        localStorage.setItem(token, response.data.token)
+        localStorage.setItem("token", response.data.token)
         
-        
+        //redirect to main page (/main)
+
       })
       .catch(function (error) {
         console.log(error);
