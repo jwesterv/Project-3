@@ -2,10 +2,12 @@ import React, {Component} from 'react';
 import Message from '../Message/Message';
 import _ from 'lodash';
 
+
 class MessageList extends Component {
   constructor(props){
     super(props);
     //reach out to sql db and make a query to get fam id and chat id
+
     this.state = {
       messages: [],
       familyID: 'famtest',
@@ -33,6 +35,8 @@ class MessageList extends Component {
 
       });
   }
+
+
 
   render() {
     let messageNodes = this.state.messages.map((message) => {
