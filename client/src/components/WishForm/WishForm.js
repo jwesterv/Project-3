@@ -41,14 +41,7 @@ class WishForm extends React.Component {
       })
     }
   
-    constructor(props) {
-    super(props);
-    this.state = { value: '', list: [] };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-
-  }
+    
   componentWillMount() {
     this.getWishes()
   }
