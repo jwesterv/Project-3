@@ -15,7 +15,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import ImageIcon from '@material-ui/icons/Image';
-
+import Header from "../../components/Header/index";
 
 const styles = theme => ({
     root: {
@@ -68,7 +68,8 @@ class Family extends React.Component {
 
         return (
 
-
+<div>
+    <Header/>
             <Card className={classes.card}>
             
                 <CardContent>
@@ -116,185 +117,11 @@ class Family extends React.Component {
 
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
-                    <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
-                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                        <Typography className={classes.heading}>Name</Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                            <List component="nav" className={classes.root}>
-                                <ListItem>
-                                    <Avatar>
-                                        <ImageIcon />
-                                    </Avatar>
-                                    <ListItemText primary="Photos" secondary="Birthday" />
-                                </ListItem>
-                                <ListItem button>
-                                    <ListItemText primary="Name:" />
-                                </ListItem>
-                                <Divider />
-
-                                <ListItem button>
-                                    <ListItemText primary="# Confirms:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Street Address:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="City, Zip, State:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Phone:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Email:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Wish List:" />
-                                </ListItem>
-                            </List>
-
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                    <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
-                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                        <Typography className={classes.heading}>Name</Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                            <List component="nav" className={classes.root}>
-                                <ListItem>
-                                    <Avatar>
-                                        <ImageIcon />
-                                    </Avatar>
-                                    <ListItemText primary="Photos" secondary="Birthday" />
-                                </ListItem>
-                                <ListItem button>
-                                    <ListItemText primary="Name:" />
-                                </ListItem>
-                                <Divider />
-
-                                <ListItem button>
-                                    <ListItemText primary="# Confirms:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Street Address:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="City, Zip, State:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Phone:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Email:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Wish List:" />
-                                </ListItem>
-                            </List>
-
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                    <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
-                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                        <Typography className={classes.heading}>Name</Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                            <List component="nav" className={classes.root}>
-                                <ListItem>
-                                    <Avatar>
-                                        <ImageIcon />
-                                    </Avatar>
-                                    <ListItemText primary="Photos" secondary="Birthday" />
-                                </ListItem>
-                                <ListItem button>
-                                    <ListItemText primary="Name:" />
-                                </ListItem>
-                                <Divider />
-
-                                <ListItem button>
-                                    <ListItemText primary="# Confirms:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Street Address:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="City, Zip, State:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Phone:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Email:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Wish List:" />
-                                </ListItem>
-                            </List>
-
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                    <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
-                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                        <Typography className={classes.heading}>Name</Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                            <List component="nav" className={classes.root}>
-                                <ListItem>
-                                    <Avatar>
-                                        <ImageIcon />
-                                    </Avatar>
-                                    <ListItemText primary="Photos" secondary="Birthday" />
-                                </ListItem>
-                                <ListItem button>
-                                    <ListItemText primary="Name:" />
-                                </ListItem>
-                                <Divider />
-
-                                <ListItem button>
-                                    <ListItemText primary="# Confirms:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Street Address:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="City, Zip, State:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Phone:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Email:" />
-                                </ListItem>
-                                <Divider light />
-                                <ListItem button>
-                                    <ListItemText primary="Wish List:" />
-                                </ListItem>
-                            </List>
-
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
+                   
                 </CardContent>
               
             </Card>
+            </div>
           
             
         );
