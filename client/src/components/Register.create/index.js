@@ -9,6 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import classNames from 'classnames';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Navbar from '../../components/NavBar'
+import Chat from '../../components/Chat/index';
 
 
 const styles = {
@@ -50,8 +52,10 @@ function RegisterCreate(props) {
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
+    <div>
+    <Navbar />
     <Card className={classes.card}>
-      <CardContent>
+          <CardContent>
 
        
         <Typography variant="h5" component="h2">
@@ -86,9 +90,10 @@ function RegisterCreate(props) {
       
       </CardContent>
       <card className={classes.card}>
-        <Button className={classes.button} variant="outlined" color="primary" size="small" >CREATE FAMILY</Button>
+        <Button className={classes.button}  variant="outlined" color="primary" size="small" >CREATE FAMILY</Button>
       </card>
     </Card>
+    </div>
   );
 }
 

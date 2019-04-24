@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, withTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 
 const styles = {
   root: {
     flexGrow: 1,
   },
-  grow: {
+
+   grow: {
     flexGrow: 1,
   },
   menuButton: {
@@ -30,9 +32,14 @@ function NavBar(props) {
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
           </IconButton>
           <Typography variant="h6" color="inherit" className={classes.grow}>
-            About
-          </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" component={Link} to="/">Home
+                       </Button>
+            <Button color="inherit" component={Link} to="/about">About
+                       </Button>
+
+
+                      </Typography>
+          <Button color="inherit" component={Link} to="/login">Login</Button>
         </Toolbar>
       </AppBar>
     </div>

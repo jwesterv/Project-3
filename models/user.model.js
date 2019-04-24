@@ -20,7 +20,8 @@ module.exports = function (sequelize, DataTypes) {
         lastname: DataTypes.STRING,
         dob: DataTypes.DATE,
         confirmedBy: DataTypes.STRING,
-        wishid: DataTypes.STRING
+        wishid: DataTypes.STRING,
+        userid: DataTypes.STRING
     },
     {
                     freezeTableName: true

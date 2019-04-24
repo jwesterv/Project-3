@@ -1,10 +1,12 @@
 module.exports = function (sequelize, DataTypes) {
-    const Calandar = sequelize.define("Calendar", {
+    const Calendar = sequelize.define("Calendar", {
         id:{type: DataTypes.STRING, primaryKey: true },
         familyid: DataTypes.STRING,
         event: DataTypes.STRING,
-        eventDate: DataTypes.DATE,
+        eventStart: DataTypes.DATE,
+        eventEnd: DataTypes.DATE,
         eventTime: DataTypes.TIME,
+        description: DataTypes.STRING,
         userid: DataTypes.STRING
        },
         {
@@ -12,5 +14,5 @@ module.exports = function (sequelize, DataTypes) {
         });
 
 
-    return Calandar;
+    return Calendar;
 };

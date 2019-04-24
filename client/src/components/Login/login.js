@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./login.css";
+import axios from 'axios';
+import Navbar from "../NavBar";
 
 export default class Login extends Component {
   constructor(props) {
@@ -23,13 +25,34 @@ export default class Login extends Component {
   }
 
   handleSubmit = event => {
+      const token = "";
     event.preventDefault();
     //add axios here to auth/login
+    axios.post("/auth/login", {
+        email: this.state.email,
+        password: this.state.password,
+        
+      })
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem("token", response.data.token)
+ 
+        //redirect to main page (/main)
+        window.redirect("/chat")
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
   }
 
   render() {
     return (
+      <div>
+          <Navbar/>
+    
       <div className="Login">
+      
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId="email" bsSize="large">
             <div>Email</div>
@@ -57,6 +80,7 @@ export default class Login extends Component {
             Login
           </Button>
         </form>
+      </div>
       </div>
     );
   }

@@ -4,7 +4,16 @@ var authenticationHelpers = {
         return crypto.randomBytes(16).toString('hex');
     },
     getAccessCode() {
-        return crypto.randomBytes(7).toString('hex');
+        //possibly change to int -- use crypto documentation
+        return crypto.randomBytes(3).toString('hex');
+    },
+    getChatID() {
+        //possibly change to int -- use crypto documentation
+        return crypto.randomBytes(6).toString('hex');
+    },
+    getUserID() {
+        //possibly change to int -- use crypto documentation
+        return crypto.randomBytes(6).toString('hex');
     },
     /**
      * 

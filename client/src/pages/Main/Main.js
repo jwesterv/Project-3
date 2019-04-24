@@ -5,24 +5,33 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import RegisterCreate from '../../components/Register.create';
+import RegisterJoin from '../../components/Register.join';
+import Navbar from '../../components/NavBar'
+
+
 // import Header from '../components/Header';
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
+    
   },
   paper: {
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
+    justifyContent: 'center',
     color: theme.palette.text.secondary,
   },
   contain: {
-    height: 500
+    height: 500,
+    
   },
 
   button: {
     margin: theme.spacing.unit,
-  },
+    justifyContent: 'center',
+          },
 
   input: {
     display: 'none',
@@ -33,23 +42,26 @@ function CenteredGrid(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
-    {/* <Header /> */}
-      <Grid container spacing={24}>
-        <Grid className={classes.contain}  item xs={12}>
-          <Paper className={classes.paper}>
-            <Button variant="outlined" color="primary" className={classes.button}>
+    <div>
+    <Navbar />
+    <div  align="center" className={classes.root}>
+
+      <Grid container spacing={12}>
+        <Grid item xs={12}>
+          <Paper>
+            <Button variant="outlined" color="primary" className={classes.button} component={Link} to="/registercreate">
               Create
 </Button>
-            <Button variant="outlined" color="primary" className={classes.button}>
+            <Button variant="outlined" color="primary" className={classes.button} component={Link} to="/registerjoin">
               Join
 </Button>
 
-</Paper>
+          </Paper>
         </Grid>
 
 
       </Grid>
+    </div>
     </div>
   );
 }

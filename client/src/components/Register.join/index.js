@@ -9,57 +9,60 @@ import Typography from '@material-ui/core/Typography';
 import classNames from 'classnames';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Navbar from '../../components/NavBar'
+import { Link } from '@material-ui/core';
+import Chat from '../../components/Chat/index';
+import axios from "axios";
 
 
-const styles = {
-  card: {
-    minWidth: 275,
-    textAlign: 'center',
-  },
-  button: {
-    textAlign: 'center',   
-    paddingtop: 20
-  },
 
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-
-  dense: {
-    marginTop: 19,
-  },
-  menu: {
-    width: 200,
-  },
+class RegisterJoin extends React.Component {
+  constructor(props) {
+    super(props);
+     this.state = {
+      email: "",
+      password: "",
+      username: "",
+    };
 };
 
-function RegisterJoin(props) {
-  const { classes } = props;
-  const bull = <span className={classes.bullet}>•</span>;
+handleSubmit = event => {
+  
+event.preventDefault();
+//add axios here to auth/login
+axios.post("/auth/register", {
+    email: this.state.email,
+    password: this.state.password,
+    username: this.state.username,
+ 
+  })
 
+  .then((response) => {
+    console.log(response);
+  
+    //redirect to main page (/main)
+
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+}
+
+render () {
   return (
-    <Card className={classes.card}>
+    <div>
+        <Navbar />
+  
+    <div align="center">
+    
+    <Card>
       <CardContent>
-
-       
         <Typography variant="h5" component="h2">
           <TextField
             id="standard-with-placeholder"
             label="Email"
             placeholder="Email"
-            className={classes.textField}
             margin="normal"
           />
         </Typography>
@@ -69,7 +72,6 @@ function RegisterJoin(props) {
             id="standard-with-placeholder"
             label="Username"
             placeholder="Username"
-            className={classes.textField}
             margin="normal"
           />
         </Typography>
@@ -77,7 +79,6 @@ function RegisterJoin(props) {
         <TextField
           id="standard-password-input"
           label="Password"
-          className={classes.textField}
           type="password"
           autoComplete="current-password"
           margin="normal"
@@ -85,17 +86,16 @@ function RegisterJoin(props) {
                 </Typography>
       
       </CardContent>
-      <card className={classes.card}>
-        <Button className={classes.button} variant="outlined" color="primary" size="small" >JOIN FAMILY</Button>
+      <card>
+        <Button onClick={this.handleSubmit} component={Link} to="/chat" variant="outlined" color="primary" size="small" >JOIN FAMILY</Button>
       </card>
     </Card>
+    </div>
+    </div>
   );
 }
+}
 
-RegisterJoin.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(RegisterJoin);
+export default RegisterJoin;
 
 
