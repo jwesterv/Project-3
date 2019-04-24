@@ -11,8 +11,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Navbar from '../../components/NavBar'
 import { Link } from '@material-ui/core';
-import Chat from '../../components/Chat/index';
 import axios from "axios";
+import Pending from "../../pages/pending/pending"
 
 
 
@@ -58,6 +58,14 @@ render () {
     
     <Card>
       <CardContent>
+      <Typography variant="h5" component="h2">
+        <TextField
+          id="standard-with-placeholdert"
+          label="Family Access Code"
+          placeholder="Family Access Code"
+           margin="normal"
+        />
+                </Typography>
         <Typography variant="h5" component="h2">
           <TextField
             id="standard-with-placeholder"
@@ -87,7 +95,7 @@ render () {
       
       </CardContent>
       <card>
-        <Button onClick={this.handleSubmit} component={Link} to="/chat" variant="outlined" color="primary" size="small" >JOIN FAMILY</Button>
+        <Button onClick={this.handleSubmit} component={Link} to="/pending" variant="outlined" color="primary" size="small" >JOIN FAMILY</Button>
       </card>
     </Card>
     </div>
