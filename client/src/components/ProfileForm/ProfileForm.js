@@ -6,7 +6,10 @@ import axios from "axios";
 
 class ProfileForm extends React.Component {
 
-    
+    //find handlesubmit 
+        //axios.post (route)
+        //function req res
+        //.data.object (name, bday, etc)
 
 
     constructor(props) {

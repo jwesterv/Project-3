@@ -6,14 +6,9 @@ var db = require("../../models");
 // Routes
 // =============================================================
 
-<<<<<<< HEAD
   //ROUTES FOR WISHES
   //===========================================================
   //GET WISHES
-=======
- 
-  //     GET ROUTES 
->>>>>>> 5050243315bebd92e3b6eeaaf20175146f4d080f
     router.get("/wishes", function (req, res) {
       
         db.Wish.findAll({
