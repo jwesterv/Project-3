@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect, Route } from 'react-router-dom'
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./login.css";
 import axios from 'axios';
@@ -38,13 +39,14 @@ export default class Login extends Component {
         localStorage.setItem("token", response.data.token)
  
         //redirect to main page (/main)
-        window.redirect("/chat")
+   
       })
       .catch(function (error) {
         console.log(error);
       });
+     
 
-  }
+  } 
 
   render() {
     return (
