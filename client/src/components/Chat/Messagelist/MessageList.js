@@ -6,8 +6,7 @@ import _ from 'lodash';
 class MessageList extends Component {
   constructor(props){
     super(props);
-    //reach out to sql db and make a query to get fam id and chat id
-
+   
     this.state = {
       messages: [],
       familyID: 'famtest',

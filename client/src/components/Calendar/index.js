@@ -10,15 +10,6 @@ class CalendarComponent extends Component {
     return (
       <div className="App">
       <Header />
-        <header>
-          <div id="logo">
-            {/* <span className="icon">date_range</span> */}
-            <span>
-              FAM.<b>ily</b>
-            </span>
-          </div>
-        </header>
-
        <main>
           <Calendar />
         </main>
