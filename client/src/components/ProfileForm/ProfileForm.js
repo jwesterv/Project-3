@@ -5,6 +5,10 @@ import Navbar from '../../components/NavBar';
 
 
 
+    //find handlesubmit 
+        //axios.post (route)
+        //function req res
+        //.data.object (name, bday, etc)
 
 class ProfileForm extends React.Component {
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class Login extends Component {
     constructor() {
         super();
@@ -34,7 +33,7 @@ class Login extends Component {
                         />
                     </form>
                 </div>
-            </div>
+            </div> 
         );
     }
 
