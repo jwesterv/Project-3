@@ -10,7 +10,7 @@ import classNames from 'classnames';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Navbar from '../../components/NavBar'
-import Chat from '../../components/Chat'
+import Chat from '../../components/Chat/index';
 
 
 const styles = {
@@ -90,7 +90,7 @@ function RegisterCreate(props) {
       
       </CardContent>
       <card className={classes.card}>
-        <Button className={classes.button} variant="outlined" color="primary" size="small" >CREATE FAMILY</Button>
+        <Button className={classes.button}  variant="outlined" color="primary" size="small" >CREATE FAMILY</Button>
       </card>
     </Card>
     </div>

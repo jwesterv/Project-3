@@ -24,6 +24,7 @@ import Main from "./pages/Main/Main";
 import About from "./pages/About/About";
 import ProfileJoin from "./pages/ProfileJoin/ProfileJoin";
 import Pending from "./pages/pending/pending";
+import UserProfile from "./pages/UserProfile/index";
 
 
 export default class App extends Component {
@@ -34,8 +35,6 @@ export default class App extends Component {
   
   };
   }
-
-
 
   //Main App Router
   render() {
@@ -55,10 +54,13 @@ export default class App extends Component {
           <Route exact path="/wishlist" component={WishList} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/calendar" component={Calendar} />
-          <Route exact path="/family" component={Family} />
+          <PrivateRoute exact path="/family" component={Family} />
           <Route exact path="/registercreate" component={RegisterCreate} />
           <Route exact path="/registerjoin" component={RegisterJoin} />
           <Route exact path="/pending" component={Pending} />
+          <Route exact path="/userprofile" component={UserProfile} />
+          
+
          
         </Switch>
       </BrowserRouter>

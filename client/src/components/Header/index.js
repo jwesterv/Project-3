@@ -16,6 +16,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
@@ -172,6 +174,8 @@ class Header extends React.Component {
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
              FAM.ily
             </Typography>
+            <Button color="inherit" component={Link} to="/">Home
+                       </Button>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
