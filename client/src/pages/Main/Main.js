@@ -42,8 +42,9 @@ function CenteredGrid(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
+    <div>
     <Navbar />
+    <div  align="center" className={classes.root}>
 
       <Grid container spacing={12}>
         <Grid item xs={12}>
@@ -60,6 +61,7 @@ function CenteredGrid(props) {
 
 
       </Grid>
+    </div>
     </div>
   );
 }

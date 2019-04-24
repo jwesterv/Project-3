@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import 'typeface-roboto';
+import Navbar from "../../components/NavBar/index";
 
 const styles = theme => ({
     root: {
@@ -18,7 +19,7 @@ function PaperSheet(props) {
 
     return (
         <div>
-         
+         <Navbar />
             <Paper className={classes.root} elevation={1}>
                 <Typography variant="h5" component="h3">
                     About Us
