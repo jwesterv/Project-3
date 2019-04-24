@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Calendar from "./Calendar/Calendar"
-import Navbar from '../../components/NavBar'
+import Header from '../Header';
 import TextField from '@material-ui/core/TextField';
 import "./style.css"
 
@@ -9,7 +9,7 @@ class CalendarComponent extends Component {
   render() {
     return (
       <div className="App">
-      <Navbar />
+      <Header />
         <header>
           <div id="logo">
             {/* <span className="icon">date_range</span> */}
