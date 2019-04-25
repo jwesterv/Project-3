@@ -4,7 +4,7 @@ require("dotenv").config();
 const express = require("express");
 const jwt = require('express-jwt');
 const cookieParser = require("cookie-parser");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 const axios = require("axios")
@@ -54,7 +54,7 @@ if (process.env.NODE_ENV === "test") {
 }
 
 models.sequelize.sync(syncOptions).then(function () {
-  app.listen(process.env.PORT || 5000, () => {
+  app.listen(PORT, () => {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
   });
 });

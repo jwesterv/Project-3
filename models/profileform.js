@@ -9,8 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     address: DataTypes.STRING,
     city: DataTypes.STRING,
     st: DataTypes.STRING,
-    zip: DataTypes.STRING,
-    avatar: DataTypes.STRING
+    zip: DataTypes.STRING
   });
   return ProfileForm;
 };
