@@ -8,17 +8,20 @@ var db = require("../../models");
 
   //ROUTES FOR WISHES
   //===========================================================
-  //GET WISHES
+  //GET WISHES 
     router.get("/wishes", function (req, res) {
-      
+        var query = {};
+        if (req.query.profile_id) {
+          query.ProfileId = req.query.profile_id;
+        }
         db.Wish.findAll({
-            
+            where: query
         }).then(function (dbWish) {
             res.json(dbWish);
         });
     });
 
-   
+  
 
 
   //POST WISHES
@@ -26,6 +29,8 @@ var db = require("../../models");
     console.log(req.body);
     //insert wish into table
     db.Wish.create({
+      //userid: req.body.userid
+      //need to do an axios get??? link users to wishes, or use auth token
       text: req.body.text,
       granted: req.body.granted
     }).then(function (dbWish) {
@@ -33,6 +38,9 @@ var db = require("../../models");
       res.json(dbWish);
     });
   });
+
+
+
 
   //DELETE WISHES ROUTE
   router.delete("/wishes/:id", function(req, res) {

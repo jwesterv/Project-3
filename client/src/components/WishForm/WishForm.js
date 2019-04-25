@@ -50,14 +50,7 @@ class WishForm extends React.Component {
       event.preventDefault();
     }
   
-    // handleDeleteChange (id) {
-    //   console.log(id)
-    //   axios.delete("/api/wishes/:id", {
-    //     id: id
-
-    //   }).then(() => {this.getWishes()});
-      
-    // }
+    
    
     deleteWish(id) {
       axios.delete("/api/wishes/" + id)

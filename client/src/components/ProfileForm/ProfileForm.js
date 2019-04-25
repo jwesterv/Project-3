@@ -5,10 +5,7 @@ import Navbar from '../../components/NavBar';
 
 
 
-    //find handlesubmit 
-        //axios.post (route)
-        //function req res
-        //.data.object (name, bday, etc)
+    
 
 class ProfileForm extends React.Component {
 
@@ -28,7 +25,7 @@ class ProfileForm extends React.Component {
 
         }
 
-        this.handleChange = this.handleChange.bind(this);
+        
         this.handleSubmit = this.handleSubmit.bind(this);
 
 
@@ -122,7 +119,7 @@ class ProfileForm extends React.Component {
             <div>
 
                 <Navbar />
-               {this.state.firstName}
+              
                 <br></br>
                 {this.state.firstName}
                 <br></br>

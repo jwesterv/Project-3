@@ -9,7 +9,7 @@ import Login from "./components/Login/login";
 import { PrivateRoute } from './components/PrivateRoute/index'
 import Chat from "./components/Chat/index";
 import WishList from "./components/WishForm/WishForm"
-import Profile from "./components/ProfileForm/ProfileForm"
+import ProfileForm from "./components/ProfileForm/ProfileForm"
 import Calendar from "./components/Calendar/index";
 import Header from './components/Header';
 import Family from "./pages/Family/Family"
@@ -51,8 +51,11 @@ export default class App extends Component {
           <Route exact path="/publicchat" component={Chat} />
           <Route exact path="/join" component={ProfileJoin} />
           <Route exact path="/create" component={ProfileCreate} />
-          <Route exact path="/wishlist" component={WishList} />
-          <Route exact path="/profile" component={Profile} />
+          {/* <Route path="/wishlist" component={WishList} /> */}
+          <Route exact path="/profile" component={()=><div>
+            <ProfileForm/>
+            <WishList/>
+          </div>} />
           <Route exact path="/calendar" component={Calendar} />
           <PrivateRoute exact path="/family" component={Family} />
           <Route exact path="/registercreate" component={RegisterCreate} />

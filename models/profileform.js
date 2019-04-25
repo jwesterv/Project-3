@@ -11,5 +11,18 @@ module.exports = function(sequelize, DataTypes) {
     st: DataTypes.STRING,
     zip: DataTypes.STRING
   });
+
+  ProfileForm.associate = function (models) {
+    //associate profile with wishes
+    //when a profile is deleted, also delete any associated wishes
+    ProfileForm.hasMany(models.Wish, {
+      onDelete: "cascade"
+    });
+  };
   return ProfileForm;
 };
+
+
+
+
+
