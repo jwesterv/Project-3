@@ -10,7 +10,6 @@ module.exports = function(sequelize, DataTypes) {
     city: DataTypes.STRING,
     st: DataTypes.STRING,
     zip: DataTypes.STRING,
-    avatar: DataTypes.STRING
-  });
+     });
   return ProfileForm;
 };
