@@ -3,117 +3,87 @@ import Calendar from "./Calendar/Calendar"
 import Header from '../Header';
 import TextField from '@material-ui/core/TextField';
 import "./style.css"
+import axios from "axios";
 
-class CalendarComponent extends Component {
+class CalendarComponent extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-        
+      event: "",
+      eventStart: "",
+      eventEnd: "",
+      eventTime: "",
+      description: ""
     }
 
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
+    this.handleEventChange = this.handleEventChange.bind(this);
+    this.handleEventStartChange = this.handleEventStartChange.bind(this);
+    this.handleEventEndChange = this.handleEventEndChange.bind(this);
+    this.handleEventTimeChange = this.handleEventTimeChange.bind(this);
+    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
 
-    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
-    this.handleLastNameChange = this.handleLastNameChange.bind(this);
-    this.handleBirthdayChange = this.handleBirthdayChange.bind(this);
-    this.handlePhoneChange = this.handlePhoneChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handleAddressChange = this.handleAddressChange.bind(this);
-    this.handleCityChange = this.handleCityChange.bind(this);
-    this.handleStChange = this.handleStChange.bind(this);
-    this.handleZipChange = this.handleZipChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleEventChange(event) {
+    this.setState({ event: event.target.value });
+  };
 
-}
-handleFirstNameChange(event) {
-    this.setState({ firstName: event.target.value });
+  handleEventStartChange(event) {
+    this.setState({ eventStart: event.target.value });
+  };
 
-};
+  handleEventEndChange(event) {
+    this.setState({ eventEnd: event.target.value });
+  };
 
-handleLastNameChange(event) {
-    this.setState({ lastName: event.target.value });
+  handleEventTimeChange(event) {
+    this.setState({ eventTime: event.target.value });
+  };
 
-};
-
-handleBirthdayChange(event) {
-    console.log(event.target.value)
-    this.setState({ birthday: event.target.value });
-
-};
-handlePhoneChange(event) {
-    this.setState({ phone: event.target.value });
-
-};
-
-handleEmailChange(event) {
-    this.setState({ email: event.target.value });
-
-};
-
-handleAddressChange(event) {
-    this.setState({ address: event.target.value });
-
-};
-
-handleCityChange(event) {
-    this.setState({ city: event.target.value });
-
-};
-
-handleStChange(event) {
-    this.setState({ st: event.target.value });
-
-};
-
-handleZipChange(event) {
-    this.setState({ zip: event.target.value });
-
-};
+  handleDescriptionChange(event) {
+    this.setState({ description: event.target.value });
+  };
 
 
-
-handleSubmit(event) {
+  handleSubmit(event) {
     console.log(this.state)
     event.preventDefault();
-    alert('Your profile has been submitted!');
+    alert('Calendar event submitted!');
 
     axios.post("/api/calendar", {
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        birthday: this.state.birthday,
-        phone: this.state.phone,
-        email: this.state.email,
-        address: this.state.address,
-        city: this.state.city,
-        st: this.state.st,
-        zip: this.state.zip
+      event: this.state.event,
+      eventStart: this.state.eventStart,
+      eventEnd: this.state.eventEnd,
+      eventTime: this.state.eventTime,
+      description: this.state.description,
 
     })
-        .then(function (response) {
-            console.log("profile" + response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+      .then(function (response) {
+        console.log("Calendar event" + response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
 
-  
+
   render() {
     return (
       <div className="App">
-      <Header />
-       <main>
+        <Header />
+        <main>
           <Calendar />
         </main>
-        <form className="calendar-input" autoComplete="off">
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <TextField
             id="outlined-event"
             label="Event Name"
             className="event"
-            value=""
+            value={this.state.event}
+            onChange={this.handleEventChange}
             margin="normal"
             variant="outlined"
           />
@@ -122,7 +92,8 @@ handleSubmit(event) {
             label="Event Start"
             className="eventStart"
             type="date"
-            value="4-27-2019"
+            value={this.state.eventStart}
+            onChange={this.handleEventStartChange}
             margin="normal"
             variant="outlined"
           />
@@ -131,7 +102,8 @@ handleSubmit(event) {
             label="Event End"
             className="eventEnd"
             type="date"
-            value= "4-27-2019"
+            value={this.state.eventEnd}
+            onChange={this.handleEventEndChange}
             margin="normal"
             variant="outlined"
           />
@@ -140,7 +112,8 @@ handleSubmit(event) {
             label="Event Time"
             className="eventEnd"
             type="time"
-            value="10:00"
+            value={this.state.eventEnd}
+            onChange={this.handleEventEndChange}
             margin="normal"
             variant="outlined"
           />
@@ -148,17 +121,18 @@ handleSubmit(event) {
             id="outlined-eventDescription"
             label="Description"
             className="eventDescription"
-            value=""
+            value={this.state.eventDescription}
+            onChange={this.handleDescriptionChange}
             margin="normal"
             variant="outlined"
           />
-          <button variant ="outlined" className="submit-button" type="submit" value="submit">Submit</button>
+          <input className="btn btn-primary-outline" type="submit" value="Submit" />
 
         </form>
       </div>
-    )
+    );
   }
 }
 
-export default CalendarComponent;
 
+export default CalendarComponent;
