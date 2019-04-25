@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "vcd9tdi1wzrzgx94",
-    "password": "hm4w7d6w7winpkg1",
-    "database": "kc6v85i1vtftecjv",
+    "username": "root",
+    "password": "root",
+    "database": "family_db",
     "host": "jsftj8ez0cevjz8v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
@@ -14,10 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "vcd9tdi1wzrzgx94",
-    "password": "hm4w7d6w7winpkg1",
-    "database": "kc6v85i1vtftecjv",
-    "host": "jsftj8ez0cevjz8v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
