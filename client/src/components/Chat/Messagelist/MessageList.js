@@ -2,14 +2,25 @@ import React, { Component } from 'react';
 import Message from '../Message/Message';
 import _ from 'lodash';
 
+
+
+//Payload Template
+//=================================================
+//import privateHelpers -- link below import to your component
 import privateHelpers from '../../PrivateRoute/helpers/private.helper'
 
-
+//get token
 let token = privateHelpers.getToken();
+//split token
 privateHelpers.splitToken(token);
+//pull user data from token
 const userData = privateHelpers.getUserData(token);
+//view token and user obj
 console.log(token)
 console.log(userData)
+//==================================================
+
+
 
 
 class MessageList extends Component {
