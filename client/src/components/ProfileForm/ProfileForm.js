@@ -9,8 +9,7 @@ import Navbar from '../../components/NavBar';
 
 class ProfileForm extends React.Component {
 
-
-    constructor(props) {
+   constructor(props) {
         super(props);
         this.state = {
             firstName: '',
@@ -138,8 +137,6 @@ class ProfileForm extends React.Component {
                 {this.state.st}
                 <br></br>
                 {this.state.zip}
-
-
 
                 <br></br>
 

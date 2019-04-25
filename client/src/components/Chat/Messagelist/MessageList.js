@@ -1,16 +1,38 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Message from '../Message/Message';
 import _ from 'lodash';
 
+
+
+//Payload Template
+//=================================================
+//import privateHelpers -- link below import to your component
+import privateHelpers from '../../PrivateRoute/helpers/private.helper'
+
+//get token
+let token = privateHelpers.getToken();
+//split token
+privateHelpers.splitToken(token);
+//pull user data from token
+const userData = privateHelpers.getUserData(token);
+//view token and user obj
+console.log(token)
+console.log(userData)
+//==================================================
+
+
+
+
 class MessageList extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    //reach out to sql db and make a query to get fam id and chat id
+
     this.state = {
       messages: [],
       familyID: 'famtest',
-      chatID: 'chatID'
-      
+      chatID: 'chatID',
+      token: 'token'
+
     };
     let app = this.props.db.database().ref('/chats/chat/' + this.state.familyID + '/' + this.state.chatID);
     app.on('value', snapshot => {
@@ -18,29 +40,38 @@ class MessageList extends Component {
     });
   }
 
-  getData(values){
+  // getUserData = function () {
+  //   const token = this.getToken();
+  //   return this.splitToken(token);
+  // };
+  
+
+
+  getData(values) {
     let messagesVal = values;
     let messages = _(messagesVal)
-                      .keys()
-                      .map(messageKey => {
-                          let cloned = _.clone(messagesVal[messageKey]);
-                          cloned.key = messageKey;
-                          return cloned;
-                      })
-                      .value();
-      this.setState({
-        messages: messages,
+      .keys()
+      .map(messageKey => {
+        let cloned = _.clone(messagesVal[messageKey]);
+        cloned.key = messageKey;
+        return cloned;
+      })
+      .value();
+    this.setState({
+      messages: messages,
 
-      });
+    });
   }
+
+
 
   render() {
     let messageNodes = this.state.messages.map((message) => {
       return (
         <div className="card">
           <div className="card-content">
-            <Message message = {message.message} />
-
+            <Message message={message.message} />
+            
           </div>
         </div>
       )

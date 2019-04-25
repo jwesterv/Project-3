@@ -9,6 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     address: DataTypes.STRING,
     city: DataTypes.STRING,
     st: DataTypes.STRING,
+<<<<<<< HEAD
     zip: DataTypes.STRING
   });
 
@@ -19,6 +20,10 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: "cascade"
     });
   };
+=======
+    zip: DataTypes.STRING,
+     });
+>>>>>>> d3607e9a7221f89bbbe260c2f1d55903fc46ffa2
   return ProfileForm;
 };
 

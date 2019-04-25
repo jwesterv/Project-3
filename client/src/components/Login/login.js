@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./login.css";
 import axios from 'axios';
 import Navbar from "../NavBar";
+import { Link, Redirect, Route } from 'react-router-dom';
+import Chat from '../../components/Chat';
 
 export default class Login extends Component {
   constructor(props) {
@@ -36,15 +39,14 @@ export default class Login extends Component {
       .then((response) => {
         console.log(response);
         localStorage.setItem("token", response.data.token)
- 
-        //redirect to main page (/main)
-        window.redirect("/chat")
+  
       })
       .catch(function (error) {
         console.log(error);
       });
+     
 
-  }
+  } 
 
   render() {
     return (
@@ -76,6 +78,7 @@ export default class Login extends Component {
             bsSize="large"
             disabled={!this.validateForm()}
             type="submit"
+            component={Link} to="/chat"            
           >
             Login
           </Button>
