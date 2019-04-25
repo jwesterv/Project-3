@@ -15,6 +15,10 @@ var authenticationHelpers = {
         //possibly change to int -- use crypto documentation
         return crypto.randomBytes(6).toString('hex');
     },
+    getFamilyID() {
+        //possibly change to int -- use crypto documentation
+        return crypto.randomBytes(6).toString('hex');
+    },
     /**
      * 
      * @param {*} salt 
@@ -27,6 +31,7 @@ var authenticationHelpers = {
         var unvalidatedHash = authenticationHelpers.getHash(user.salt, password);
         return unvalidatedHash === user.hash;
     }
+    
 }
 
 module.exports = authenticationHelpers;

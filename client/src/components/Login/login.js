@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./login.css";
 import axios from 'axios';
 import Navbar from "../NavBar";
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, Route } from 'react-router-dom';
 import Chat from '../../components/Chat';
 
 export default class Login extends Component {
@@ -43,8 +44,9 @@ export default class Login extends Component {
       .catch(function (error) {
         console.log(error);
       });
+     
 
-  }
+  } 
 
   render() {
     return (

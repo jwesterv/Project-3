@@ -54,7 +54,7 @@ if (process.env.NODE_ENV === "test") {
 }
 
 models.sequelize.sync(syncOptions).then(function () {
-  app.listen(process.env.PORT || 5000, () => {
+  app.listen(PORT, () => {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
   });
 });

@@ -1,7 +1,18 @@
 import React, {Component} from 'react';
 import trim from 'trim';
+import axios from 'axios';
+
 
 class MessageBox extends Component {
+  
+  // getChats() {
+  //   axios.get("/api/chat").then(r => this.setState({ chats: r.data }))
+  //   console.log(r.data)
+  // }
+
+
+ //reach out to sql db and make a query to get fam id and chat id
+
 
   constructor(props){
     super(props);
