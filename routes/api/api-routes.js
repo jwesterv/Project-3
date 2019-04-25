@@ -8,70 +8,22 @@ var db = require("../../models");
 // Routes
 // =============================================================
 
-<<<<<<< HEAD
-  //ROUTES FOR WISHES
-  //===========================================================
-  //GET WISHES 
-    router.get("/wishes", function (req, res) {
-        var query = {};
-        if (req.query.profile_id) {
-          query.ProfileId = req.query.profile_id;
-        }
-        db.Wish.findAll({
-            where: query
-        }).then(function (dbWish) {
-            res.json(dbWish);
-        });
-    });
-
-  
-
-
-  //POST WISHES
-  router.post("/wishes", function (req, res) {
-    console.log(req.body);
-    //insert wish into table
-    db.Wish.create({
-      //userid: req.body.userid
-      //need to do an axios get??? link users to wishes, or use auth token
-      text: req.body.text,
-      granted: req.body.granted
-    }).then(function (dbWish) {
-      // callback function - access new wish 
-      res.json(dbWish);
-    });
-  });
-
-
-
-
-  //DELETE WISHES ROUTE
-  router.delete("/wishes/:id", function(req, res) {
-    // We just have to specify which todo we want to destroy with "where"
-    db.Wish.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbWish) {
-      res.json(dbWish);
-    });
-=======
 //ROUTES FOR WISHES
 //===========================================================
-//GET WISHES
+//GET WISHES 
 router.get("/wishes", function (req, res) {
-
+  var query = {};
+  if (req.query.profile_id) {
+    query.ProfileId = req.query.profile_id;
+  }
   db.Wish.findAll({
-
+    where: query
   }).then(function (dbWish) {
     res.json(dbWish);
   });
 });
 
-//:family/chat option
-// router.get("/chat/:family/", function (req, res) {
-//   //pulls chat from firebase based on familyID and renders to react
-// })
+
 
 
 //POST WISHES
@@ -79,6 +31,8 @@ router.post("/wishes", function (req, res) {
   console.log(req.body);
   //insert wish into table
   db.Wish.create({
+    //userid: req.body.userid
+    //need to do an axios get??? link users to wishes, or use auth token
     text: req.body.text,
     granted: req.body.granted
   }).then(function (dbWish) {
@@ -86,6 +40,9 @@ router.post("/wishes", function (req, res) {
     res.json(dbWish);
   });
 });
+
+
+
 
 //DELETE WISHES ROUTE
 router.delete("/wishes/:id", function (req, res) {
@@ -97,9 +54,9 @@ router.delete("/wishes/:id", function (req, res) {
   }).then(function (dbWish) {
     res.json(dbWish);
   });
+})
 
-});
->>>>>>> d3607e9a7221f89bbbe260c2f1d55903fc46ffa2
+
 
 //UPDATE WISHES (PUT ROUTE)
 router.put("/wishes", function (req, res) {
@@ -156,7 +113,6 @@ router.post("/calendar", function (req, res) {
     res.json(dbCalendar);
   });
 });
-
 
 
 module.exports = router;
