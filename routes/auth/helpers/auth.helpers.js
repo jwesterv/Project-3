@@ -31,6 +31,7 @@ var authenticationHelpers = {
         var unvalidatedHash = authenticationHelpers.getHash(user.salt, password);
         return unvalidatedHash === user.hash;
     }
+    
 }
 
 module.exports = authenticationHelpers;
