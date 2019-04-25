@@ -9,16 +9,22 @@ import _ from 'lodash';
 //import privateHelpers -- link below import to your component
 import privateHelpers from '../../PrivateRoute/helpers/private.helper'
 
-//get token
-let token = privateHelpers.getToken();
-//split token
-privateHelpers.splitToken(token);
-//pull user data from token
-const userData = privateHelpers.getUserData(token);
-//view token and user obj
-console.log(token)
-console.log(userData)
+if (localStorage.getItem('token')) {
+  //get token
+  let token = privateHelpers.getToken();
+  //split token
+  privateHelpers.splitToken(token);
+  //pull user data from token
+  const userData = privateHelpers.getUserData(token);
+  //view token and user obj
+  console.log(token)
+  console.log(userData)
+
+}
 //==================================================
+
+
+
 
 
 
@@ -44,7 +50,7 @@ class MessageList extends Component {
   //   const token = this.getToken();
   //   return this.splitToken(token);
   // };
-  
+
 
 
   getData(values) {
@@ -71,7 +77,7 @@ class MessageList extends Component {
         <div className="card">
           <div className="card-content">
             <Message message={message.message} />
-            
+
           </div>
         </div>
       )
