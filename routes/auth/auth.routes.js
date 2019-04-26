@@ -22,15 +22,18 @@ router.post("/register", function (req, res) {
         email: req.body.email,
         salt: helpers.getSalt(),
         userid: userid,
-        familyid: familyid
+        familyid: familyid,
+        isConfirmed: true,
+        confirmedBy: userid
     };
 
     var family = {
         accessCode: helpers.getAccessCode()
         , familyName: req.body.familyName
         , chatid: helpers.getChatID()
-        , userid: userid
+        , creator: userid
         , familyid: familyid
+        , numUsers: 1
     };
 
   

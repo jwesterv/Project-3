@@ -9,7 +9,6 @@ module.exports = function (sequelize, DataTypes) {
         updatedAt: DataTypes.DATE,
         //for other family chats will need a chatname
         chatid: DataTypes.STRING,
-        userid: DataTypes.STRING,
         familyid: DataTypes.STRING
     },
     {

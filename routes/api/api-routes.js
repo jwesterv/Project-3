@@ -20,6 +20,16 @@ router.get("/wishes", function (req, res) {
   });
 });
 
+router.get("/family", function (req, res) {
+  console.log(req.body)
+  db.Family.findAll({
+
+  }).then(function (dbFamily) {
+
+    res.json(dbFamily);
+  });
+});
+
 //:family/chat option
 // router.get("/chat/:family/", function (req, res) {
 //   //pulls chat from firebase based on familyID and renders to react

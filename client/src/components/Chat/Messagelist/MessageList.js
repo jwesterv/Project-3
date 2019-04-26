@@ -13,7 +13,7 @@ if (localStorage.getItem('token')) {
   //get token
   let token = privateHelpers.getToken();
   //split token
-  privateHelpers.splitToken(token);
+  let splitToken = privateHelpers.splitToken(token);
   //pull user data from token
   const userData = privateHelpers.getUserData(token);
   //view token and user obj
