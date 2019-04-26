@@ -35,7 +35,7 @@ router.post("/register", function (req, res) {
 
   
     models.Family.create(family);
-    
+    console.log(req.body.password)
     user.hash = helpers.getHash(user.salt, req.body.password);
     models.User.create(user)
 

@@ -3,6 +3,29 @@ import React, { Component } from "react";
 //import API from "./API";
 import axios from "axios";
 
+
+//Payload Template
+//=================================================
+//import privateHelpers -- link below import to your component
+
+
+
+import privateHelpers from '../PrivateRoute/helpers/private.helper'
+
+if (localStorage.getItem('token')) {
+  //get token
+  let token = privateHelpers.getToken();
+  //split token
+  privateHelpers.splitToken(token);
+  //pull user data from token
+  const userData = privateHelpers.getUserData(token);
+  //view token and user obj
+  console.log(token)
+  console.log(userData)
+
+}
+//==================================================
+
 class WishForm extends React.Component {
     constructor(props) {
       super(props);

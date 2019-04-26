@@ -2,7 +2,20 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 import Navbar from '../../components/NavBar';
+import privateHelpers from '../PrivateRoute/helpers/private.helper'
 
+if (localStorage.getItem('token')) {
+  //get token
+  let token = privateHelpers.getToken();
+  //split token
+  privateHelpers.splitToken(token);
+  //pull user data from token
+  const userData = privateHelpers.getUserData(token);
+  //view token and user obj
+  console.log(token)
+  console.log(userData)
+
+}
 
 
     
