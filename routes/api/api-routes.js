@@ -6,10 +6,8 @@ var db = require("../../models");
 
 
 // Routes
-// =============================================================
+// =================
 
-//ROUTES FOR WISHES
-//===========================================================
 //GET WISHES
 router.get("/wishes", function (req, res) {
 
@@ -29,6 +27,24 @@ router.get("/family", function (req, res) {
 
     res.json(dbFamily);
   });
+});
+
+router.get("/famaccess", function (req, res) {
+  console.log(req.body)
+  db.Family.findOne({ where: { accessCode: req.body.accesscode } })
+    .then(function (dbFamAccess) {
+
+      res.json(dbFamAccess);
+    });
+});
+
+router.get("/getmembers", function (req, res) {
+  console.log(req.body)
+  db.User.findAll({ where: { familyid: req.body.familyid } })
+    .then(function (dbFamAccess) {
+
+      res.json(dbFamAccess);
+    });
 });
 
 //:family/chat option
@@ -79,10 +95,7 @@ router.put("/wishes", function (req, res) {
 });
 
 
-
-//PROFILE ROUTES
-//===================================================================================
-//GET PROFILES
+//PROFILES
 router.post("/profile", function (req, res) {
   console.log(req.body);
 
