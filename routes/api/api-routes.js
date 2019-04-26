@@ -6,10 +6,8 @@ var db = require("../../models");
 
 
 // Routes
-// =============================================================
+// =================
 
-//ROUTES FOR WISHES
-//===========================================================
 //GET WISHES
 router.get("/wishes", function (req, res) {
 
@@ -28,6 +26,17 @@ router.get("/family", function (req, res) {
   }).then(function (dbFamily) {
 
     res.json(dbFamily);
+  });
+});
+
+router.get("/famaccess", function (req, res) {
+  console.log(req.body)
+  
+  db.Family.findAll({
+//where accesscode === req.body.accesscode
+  }).then(function (dbFamAccess) {
+
+    res.json(dbFamAccess);
   });
 });
 
@@ -79,10 +88,7 @@ router.put("/wishes", function (req, res) {
 });
 
 
-
-//PROFILE ROUTES
-//===================================================================================
-//GET PROFILES
+//PROFILES
 router.post("/profile", function (req, res) {
   console.log(req.body);
 
