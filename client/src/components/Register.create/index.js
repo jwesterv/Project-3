@@ -89,6 +89,7 @@ render () {
       </CardContent>
       <card>
         <Button onClick={this.handleSubmit} component={Link} to="/chat" variant="outlined" color="primary" size="small" >JOIN FAMILY</Button>
+      
       </card>
     </Card>
     </div>
