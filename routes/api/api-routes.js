@@ -22,6 +22,7 @@ router.get("/wishes", function (req, res) {
 
 router.get("/family", function (req, res) {
   console.log(req.body)
+  db.User.findAll({});
   db.Family.findAll({
 
   }).then(function (dbFamily) {

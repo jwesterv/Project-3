@@ -7,6 +7,7 @@ import Navbar from "../NavBar";
 import { Link, Redirect, Route } from 'react-router-dom';
 import Chat from '../../components/Chat';
 
+
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -28,62 +29,64 @@ export default class Login extends Component {
   }
 
   handleSubmit = event => {
-      const token = "";
+    const token = "";
+    const { history } = this.props;
     event.preventDefault();
     //add axios here to auth/login
     axios.post("/auth/login", {
-        email: this.state.email,
-        password: this.state.password,
-        
-      })
+      email: this.state.email,
+      password: this.state.password,
+
+    })
       .then((response) => {
         console.log(response);
         localStorage.setItem("token", response.data.token)
-  
+        history.push("/family")
       })
       .catch(function (error) {
         console.log(error);
-      });
-     
 
-  } 
+      });
+
+
+  }
 
   render() {
     return (
       <div>
-          <Navbar/>
-    
-      <div className="Login">
-      
-        <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
-            <div>Email</div>
-            <FormControl
-              autoFocus
-              type="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-          </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
-            <div>Password</div>
-            <FormControl
-              value={this.state.password}
-              onChange={this.handleChange}
-              type="password"
-            />
-          </FormGroup>
-          <Button
-            block
-            bsSize="large"
-            disabled={!this.validateForm()}
-            type="submit"
-            component={Link} to="/chat"            
-          >
-            Login
+        <Navbar />
+
+        <div className="Login">
+
+          <form onSubmit={this.handleSubmit}>
+            <FormGroup controlId="email" bsSize="large">
+              <div>Email</div>
+              <FormControl
+                autoFocus
+                type="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+            <FormGroup controlId="password" bsSize="large">
+              <div>Password</div>
+              <FormControl
+                value={this.state.password}
+                onChange={this.handleChange}
+                type="password"
+              />
+            </FormGroup>
+            <Button
+              block
+              bsSize="large"
+              disabled={!this.validateForm()}
+              type="submit"
+              component={Link} to="/chat"
+            >
+              Login
           </Button>
-        </form>
-      </div>
+          </form>
+        </div>
       </div>
     );
   }

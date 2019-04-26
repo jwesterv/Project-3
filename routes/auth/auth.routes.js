@@ -8,9 +8,9 @@ var jwt = require('jsonwebtoken');
 
 router.post("/register", function (req, res) {
 
-    // if (!req.body.username || !req.body.password || !req.body.email) {
-    //     return res.status(400).json({ msg: new Error("Please put all data on body") });
-    // }
+    if (!req.body.username || !req.body.password || !req.body.email) {
+        return res.status(400).json({ msg: new Error("Please put all data on body") });
+    }
 
    
 
@@ -40,6 +40,7 @@ router.post("/register", function (req, res) {
     models.Family.create(family);
     
     user.hash = helpers.getHash(user.salt, req.body.password);
+
     models.User.create(user)
 
         .then(function (resp) {
