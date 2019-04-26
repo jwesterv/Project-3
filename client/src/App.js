@@ -1,7 +1,6 @@
 //React Router Main
 //==========================================
 import React, { Component, Fragment } from "react";
-// import { BrowserRouter as Router, Route } from "react-router-dom";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // Import components
