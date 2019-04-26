@@ -19,7 +19,6 @@ import Header from "../../components/Header/index";
 import axios from "axios";
 import Paper from '@material-ui/core/Paper';
 import Styles from './style.css';
-import sideDrawer from '../../components/Drawer/right';
 import SearchIcon from '@material-ui/icons/Search';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import InputBase from '@material-ui/core/InputBase';
@@ -96,23 +95,60 @@ const styles = theme => ({
 });
 
 class Family extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            expanded: null,
-            firstName: "",
-            lastName: "",
-            birthday: "",
-            phone: "",
-            accessCode: "",
-            email: "",
-            address: "",
-            city: "",
-            st: "",
-            zip: ""
-
-        };
+    state = {
+        persons: [
+            {
+                firstName: 'Mary',
+                lastName: 'Smith',
+                birthday: 'Jan 1, 2010',
+                phone: '555-234-2345',
+                accessCode: 456783,
+                email: 'mary.smith@mary.smith.com',
+                address: '4 Forest Drive',
+                city: 'Laguna Beach',
+                st: 'CA',
+                zip: 92688
+            },
+            {
+                firstName: 'John',
+                lastName: 'King',
+                birthday: 'Jan 5, 1980',
+                phone: '557-555-8888',
+                accessCode: 45545,
+                email: 'john.john@hello.com',
+                address: '5 Lake drive',
+                city: 'Laguna Niguel',
+                st: 'CA',
+                zip: 92677
+            },
+            {
+                firstName: 'Bob',
+                lastName: 'States',
+                birthday: 'June 5, 1998',
+                phone: '661-888-8888',
+                accessCode: 455556,
+                email: 'bob@bobsmith.com',
+                address: '45 Baker Way',
+                city: 'Irvine',
+                st: 'CA',
+                zip: 92612
+            },
+            {
+                firstName: 'Lisa',
+                lastName: 'Jones',
+                birthday: 'February 23, 1999',
+                phone: '555-555-5555',
+                accessCode: 456325,
+                email: 'lisa@jones.com',
+                address: '455 Blue drive',
+                city: 'Lake Forest',
+                st: 'CA',
+                zip: 92653
+            },
+        ]
     };
+
+
 
     handleChange = panel => (event, expanded) => {
         this.setState({
@@ -121,30 +157,13 @@ class Family extends React.Component {
         });
     };
 
-    handleSearch = event => {
-        event.preventDefault();
-        axios.get('/profile', {
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            dob: this.state.dob,
-            phone: this.state.phone,
-            accessCode: this.state.accessCode,
-            email: this.state.email,
-            address: this.state.address,
-            city: this.state.city,
-            st: this.state.st,
-            zip: this.state.zip
-           })
-
-
-
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
+    componentDidMount() {
+        axios.get(`/profile/accesscode:`)
+            .then(res => {
+                console.log(res);
+                this.setState({ persons: res.data });
             });
-    }
+    };
 
     render() {
         const { classes } = this.props;
@@ -154,72 +173,13 @@ class Family extends React.Component {
 
             <div>
                 <Header />
-                <sideDrawer />
+
                 <div align="center" >
                     <Paper>
-
-                        <div className={classes.search}>
-                            <div className={classes.searchIcon} >
-                                <SearchIcon />
-                            </div>
-                            <InputBase
-                                placeholder="Search…"
-                                classes={{
-                                    root: classes.inputRoot,
-                                    input: classes.inputInput,
-                                }}
-                            />
-                            <Button onClick={this.handleSearch} variant="outlined" color="primary" size="small" >Search Family Member</Button>
-                        </div>
-                        <CardContent className="wrapper" >
-                            <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                    <Typography className={classes.heading}>Name</Typography>
-                                </ExpansionPanelSummary>
-
-                                <ExpansionPanelDetails>
-                                    <List component="nav" className={classes.root}>
-                                        <ListItem>
-                                            <Avatar>
-                                                <ImageIcon />
-                                            </Avatar>
-                                            <ListItemText primary="Photos" secondary="Birthday" />
-                                        </ListItem>
-                                        <ListItem button>
-                                            <ListItemText primary="Name:" className="alignRight" />
-                                        </ListItem>
-                                        <Divider />
-
-                                        <ListItem button>
-                                            <ListItemText primary="# Confirms:" />
-                                        </ListItem>
-                                        <Divider light />
-                                        <ListItem button>
-                                            <ListItemText primary="Street Address:" />
-                                        </ListItem>
-                                        <Divider light />
-                                        <ListItem button>
-                                            <ListItemText primary="City, Zip, State:" />
-                                        </ListItem>
-                                        <Divider light />
-                                        <ListItem button>
-                                            <ListItemText primary="Phone:" />
-                                        </ListItem>
-                                        <Divider light />
-                                        <ListItem button>
-                                            <ListItemText primary="Email:" />
-                                        </ListItem>
-                                        <Divider light />
-                                        <ListItem button>
-                                            <ListItemText primary="Wish List:" />
-                                        </ListItem>
-                                    </List>
-
-                                </ExpansionPanelDetails>
-                            </ExpansionPanel>
-
-                        </CardContent>
-
+                        <ul>
+                            {this.state.persons.map(person => (
+                                <li key={person.id}>{person.name}</li>))}
+                        </ul>
 
                     </Paper>
 
