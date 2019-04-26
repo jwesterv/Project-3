@@ -97,21 +97,11 @@ const styles = theme => ({
 
 class Family extends React.Component {
     constructor(props) {
-       super(props); 
+        super(props);
         this.state = {
-        expanded: null,
-        firstName: "",
-        lastName: "",
-        birthday: "",
-        phone: "",
-        accessCode: "",
-        email: "",
-        address: "",
-        city: "",
-        st: "",
-        zip: ""
+            expanded: null,
+        };
     };
-};
 
     handleChange = panel => (event, expanded) => {
         this.setState({
@@ -122,25 +112,13 @@ class Family extends React.Component {
 
     handleSearch = event => {
         event.preventDefault();
-        axios.get('/profile', {
-             firstName: this.state.firstName,
-             lastName: this.state.lastName,
-             birthday: this.state.birthday,
-             phone: this.state.phone,
-             accessCode: this.state.accessCode,
-             email: this.state.accessCode,
-             address: this.state.address,
-             city: this.state.city,
-             st: this.state.st,
-             zip: this.state.zip
-            }
-          )
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        axios.get('/profile')
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
     render() {
@@ -154,7 +132,7 @@ class Family extends React.Component {
                 <sideDrawer />
                 <div align="center" >
                     <Paper>
-                        
+
                         <div className={classes.search}>
                             <div className={classes.searchIcon} >
                                 <SearchIcon />
@@ -165,15 +143,15 @@ class Family extends React.Component {
                                     root: classes.inputRoot,
                                     input: classes.inputInput,
                                 }}
-                       />
-                       <Button onClick={this.handleSearch} variant="outlined" color="primary" size="small" >Search Family Member</Button>
+                            />
+                            <Button onClick={this.handleSearch} variant="outlined" color="primary" size="small" >Search Family Member</Button>
                         </div>
                         <CardContent className="wrapper" >
                             <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
                                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                                     <Typography className={classes.heading}>Name</Typography>
                                 </ExpansionPanelSummary>
-                               
+
                                 <ExpansionPanelDetails>
                                     <List component="nav" className={classes.root}>
                                         <ListItem>
