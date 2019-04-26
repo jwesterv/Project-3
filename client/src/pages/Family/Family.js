@@ -100,6 +100,17 @@ class Family extends React.Component {
         super(props);
         this.state = {
             expanded: null,
+            firstName: "",
+            lastName: "",
+            birthday: "",
+            phone: "",
+            accessCode: "",
+            email: "",
+            address: "",
+            city: "",
+            st: "",
+            zip: ""
+
         };
     };
 
@@ -112,7 +123,21 @@ class Family extends React.Component {
 
     handleSearch = event => {
         event.preventDefault();
-        axios.get('/profile')
+        axios.get('/profile', {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            dob: this.state.dob,
+            phone: this.state.phone,
+            accessCode: this.state.accessCode,
+            email: this.state.email,
+            address: this.state.address,
+            city: this.state.city,
+            st: this.state.st,
+            zip: this.state.zip
+           })
+
+
+
             .then(function (response) {
                 console.log(response);
             })

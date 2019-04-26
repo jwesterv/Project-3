@@ -8,9 +8,9 @@ var jwt = require('jsonwebtoken');
 
 router.post("/register", function (req, res) {
 
-    // if (!req.body.username || !req.body.password || !req.body.email) {
-    //     return res.status(400).json({ msg: new Error("Please put all data on body") });
-    // }
+    if (!req.body.username || !req.body.password || !req.body.email) {
+        return res.status(400).json({ msg: new Error("Please put all data on body") });
+    }
 
    
 
@@ -22,21 +22,25 @@ router.post("/register", function (req, res) {
         email: req.body.email,
         salt: helpers.getSalt(),
         userid: userid,
-        familyid: familyid
+        familyid: familyid,
+        isConfirmed: true,
+        confirmedBy: userid
     };
 
     var family = {
         accessCode: helpers.getAccessCode()
         , familyName: req.body.familyName
         , chatid: helpers.getChatID()
-        , userid: userid
+        , creator: userid
         , familyid: familyid
+        , numUsers: 1
     };
 
   
     models.Family.create(family);
     
     user.hash = helpers.getHash(user.salt, req.body.password);
+
     models.User.create(user)
 
         .then(function (resp) {
