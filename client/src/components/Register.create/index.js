@@ -20,82 +20,131 @@ import Pending from '../../pages/pending/pending';
 class RegisterCreate extends React.Component {
   constructor(props) {
     super(props);
-     this.state = {
+    this.state = {
       email: "",
       password: "",
       username: "",
+      dob: "",
+      familyName: "",
+      passwordVerify: ""
     };
-};
+  };
 
-handleSubmit = event => {
-  
-event.preventDefault();
-//add axios here to auth/login
-axios.post("/auth/register", {
-    email: this.state.email,
-    password: this.state.password,
-    username: this.state.username,
- 
-  })
+  handleSubmit = event => {
+    const token = "";
+    const { history } = this.props;
+    event.preventDefault();
+    //add axios here to auth/login
 
-  .then((response) => {
-    console.log(response);
-  
-    //redirect to main page (/main)
+    if (this.state.password === this.state.passwordVerify) {
+      axios.post("/auth/register", {
+        email: this.state.email,
+        password: this.state.password,
+        username: this.state.username,
+        passwordVerify: this.state.passwordVerify,
+        dob: this.state.dob,
+        familyName: this.state.familyName,
 
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+      })
 
-}
+        .then((response) => {
+          console.log(response);
 
-render () {
-  return (
-    <div>
+          //redirect to main page (/main)
+          localStorage.setItem("token", response.data.token)
+          history.push("/family")
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+    }else{
+
+      alert("Password and Confirm Password do not match")
+
+    }
+
+
+  }
+
+  render() {
+    return (
+      <div>
         <Navbar />
-  
-    <div align="center">
-    
-    <Card>
-      <CardContent>
-        <Typography variant="h5" component="h2">
-          <TextField
-            id="standard-with-placeholder"
-            label="Email"
-            placeholder="Email"
-            margin="normal"
-          />
-        </Typography>
 
-        <Typography variant="h5" component="h2">
-          <TextField
-            id="standard-with-placeholder"
-            label="Username"
-            placeholder="Username"
-            margin="normal"
-          />
-        </Typography>
-        <Typography variant="h5" component="h2">
-        <TextField
-          id="standard-password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
-          margin="normal"
-        />
-                </Typography>
-      
-      </CardContent>
-      <card>
-        <Button onClick={this.handleSubmit} component={Link} to="/chat" variant="outlined" color="primary" size="small" >JOIN FAMILY</Button>
-      
-      </card>
-    </Card>
-    </div>
-    </div>
-  );
-}
+        <div align="center">
+
+          <Card>
+            To Create a New Family Enter the Below Information:
+            <CardContent>
+              <Typography variant="h5" component="h2">
+                <TextField
+                  id="standard-dob-input"
+                  label="New Family Name"
+
+                  autoComplete="Your Family's Name"
+                  margin="normal"
+                />
+              </Typography>
+              <Typography variant="h5" component="h2">
+                <TextField
+                  id="standard-with-placeholder"
+                  label="Email"
+                  placeholder="Email"
+                  margin="normal"
+                />
+              </Typography>
+
+              <Typography variant="h5" component="h2">
+                <TextField
+                  id="standard-with-placeholder"
+                  label="Username"
+                  placeholder="Username"
+                  margin="normal"
+                />
+              </Typography>
+
+              <Typography variant="h5" component="h2">
+
+                <TextField
+                  id="standard-password-input"
+                  label="Password"
+                  type="password"
+                  autoComplete="current-password"
+                  margin="normal"
+                />
+              </Typography>
+
+              <Typography variant="h5" component="h2">
+                <TextField
+                  id="standard-passwordVerify-input"
+                  label="Confirm Password"
+                  type="password"
+                  autoComplete="current-password"
+                  margin="normal"
+                />
+              </Typography>
+
+              <Typography variant="h5" component="h2">
+                <TextField
+                  id="standard-dob-input"
+                  label="Date of Birth"
+
+                  autoComplete="mm-dd-yy"
+                  margin="normal"
+                />
+              </Typography>
+
+            </CardContent>
+            <card>
+              <Button onClick={this.handleSubmit} component={Link} to="/chat" variant="outlined" color="primary" size="small" >CREATE NEW FAMILY</Button>
+
+            </card>
+          </Card>
+        </div>
+      </div >
+    );
+  }
 }
 
 export default RegisterCreate;
