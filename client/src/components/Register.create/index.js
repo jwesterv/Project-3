@@ -51,7 +51,7 @@ class RegisterCreate extends React.Component {
           console.log(response);
 
           //redirect to main page (/main)
-          localStorage.setItem("token", response.data.token)
+          
           history.push("/family")
         })
         .catch(function (error) {
