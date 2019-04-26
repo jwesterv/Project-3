@@ -31,13 +31,20 @@ router.get("/family", function (req, res) {
 
 router.get("/famaccess", function (req, res) {
   console.log(req.body)
-  
-  db.Family.findAll({
-//where accesscode === req.body.accesscode
-  }).then(function (dbFamAccess) {
+  db.Family.findOne({ where: { accessCode: req.body.accesscode } })
+    .then(function (dbFamAccess) {
 
-    res.json(dbFamAccess);
-  });
+      res.json(dbFamAccess);
+    });
+});
+
+router.get("/getmembers", function (req, res) {
+  console.log(req.body)
+  db.User.findAll({ where: { familyid: req.body.familyid } })
+    .then(function (dbFamAccess) {
+
+      res.json(dbFamAccess);
+    });
 });
 
 //:family/chat option
