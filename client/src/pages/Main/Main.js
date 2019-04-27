@@ -54,10 +54,10 @@ function CenteredGrid(props) {
               <div className="padding"></div>
               <img className="logo" src={logo}></img>
                 <Button variant="outlined" color="primary" className={classes.button} component={Link} to="/registercreate">
-                  Create
+                  Create Tree
 </Button>
                 <Button variant="outlined" color="primary" className={classes.button} component={Link} to="/registerjoin">
-                  Join
+                  Join Tree
 </Button>
             </Paper>
 
