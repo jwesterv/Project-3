@@ -60,7 +60,6 @@ class Family extends React.Component {
             user: []
         };
 
-=======
         this.getMembers = this.getMembers.bind(this);
         this.getUser = this.getUser.bind(this);
 
