@@ -45,73 +45,7 @@ if (localStorage.getItem('token')) {
 }
 //==================================================
 
-const styles = theme => ({
-    root: {
-        width: '100%',
-        maxWidth: '600px',
-        backgroundColor: theme.palette.background.paper,
-    },
-    heading: {
-        fontSize: theme.typography.pxToRem(15),
-        flexBasis: '33.33%',
-        flexShrink: 0,
-    },
-    secondaryHeading: {
-        fontSize: theme.typography.pxToRem(15),
-        color: theme.palette.text.secondary,
-    },
 
-    avatar: {
-        margin: 10,
-    },
-
-    bigAvatar: {
-        margin: 10,
-        width: 60,
-        height: 60,
-    },
-    //style for search bar
-    search: {
-        position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: fade(theme.palette.common.white, 0.15),
-        '&:hover': {
-            backgroundColor: fade(theme.palette.common.white, 0.25),
-        },
-        marginRight: theme.spacing.unit * 2,
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing.unit * 3,
-            width: 'auto',
-        },
-    },
-    searchIcon: {
-        width: theme.spacing.unit * 9,
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    inputRoot: {
-        color: 'inherit',
-        width: '100%',
-    },
-    inputInput: {
-        paddingTop: theme.spacing.unit,
-        paddingRight: theme.spacing.unit,
-        paddingBottom: theme.spacing.unit,
-        paddingLeft: theme.spacing.unit * 10,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('md')]: {
-            width: 200,
-        },
-    },
-
-});
 
 class Family extends React.Component {
     constructor(props) {
@@ -126,67 +60,11 @@ class Family extends React.Component {
             user: []
         };
 
+=======
         this.getMembers = this.getMembers.bind(this);
         this.getUser = this.getUser.bind(this);
 
-    }
-
-    // state = {
-    // persons: [
-    //     {
-    //         firstName: 'Mary',
-    //         lastName: 'Smith',
-    //         birthday: 'Jan 1, 2010',
-    //         phone: '555-234-2345',
-    //         accessCode: "456783",
-    //         email: 'mary.smith@mary.smith.com',
-    //         address: '4 Forest Drive',
-    //         city: 'Laguna Beach',
-    //         st: 'CA',
-    //         zip: "92688"
-    //     },
-    //     {
-    //         firstName: 'John',
-    //         lastName: 'King',
-    //         birthday: 'Jan 5, 1980',
-    //         phone: '557-555-8888',
-    //         accessCode: 45545,
-    //         email: 'john.john@hello.com',
-    //         address: '5 Lake drive',
-    //         city: 'Laguna Niguel',
-    //         st: 'CA',
-    //         zip: 92677
-    //     },
-    //     {
-    //         firstName: 'Bob',
-    //         lastName: 'States',
-    //         birthday: 'June 5, 1998',
-    //         phone: '661-888-8888',
-    //         accessCode: 455556,
-    //         email: 'bob@bobsmith.com',
-    //         address: '45 Baker Way',
-    //         city: 'Irvine',
-    //         st: 'CA',
-    //         zip: 92612
-    //     },
-    //     {
-    //         firstName: 'Lisa',
-    //         lastName: 'Jones',
-    //         birthday: 'February 23, 1999',
-    //         phone: '555-555-5555',
-    //         accessCode: 456325,
-    //         email: 'lisa@jones.com',
-    //         address: '455 Blue drive',
-    //         city: 'Lake Forest',
-    //         st: 'CA',
-    //         zip: 92653
-    //     },
-    // ],
-
-    // };
-
-
-    getMembers() {
+     getMembers() {
         //     axios.get("/api/getmembers").then(res => this.setState({ members: res.data }))
     }
     getUser() {
@@ -206,6 +84,7 @@ class Family extends React.Component {
     };
 
 
+
     componentDidMount() {
 
 
@@ -218,6 +97,7 @@ class Family extends React.Component {
 
 
     };
+
 
     render() {
         const { classes } = this.props;
@@ -236,7 +116,6 @@ class Family extends React.Component {
 
             <div>
                 <Header />
-
                 <div align="center" >
                     <Paper>
                         <div>Welcome {userData.username}</div>
@@ -263,4 +142,4 @@ Family.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Family);
+export default withStyles(Family);

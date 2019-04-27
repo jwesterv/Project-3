@@ -16,3 +16,8 @@ background-color: none;
   position: center;
   padding-left: 5px
 }
+
+.about {
+  width: 500px;
+  padding-top: 20px;
+}
