@@ -64,8 +64,8 @@ class Family extends React.Component {
         };
 
 
-        this.getMembers = this.getMembers.bind(this);
-        this.getUser = this.getUser.bind(this);
+        // this.getMembers = this.getMembers.bind(this);
+        // this.getUser = this.getUser.bind(this);
         var config = {
             apiKey: "AIzaSyCcq7i-yLkoaJ5kZoFJEzl6LTSkXfpKFWw",
             authDomain: "family-97404.firebaseapp.com",
@@ -220,8 +220,10 @@ class Family extends React.Component {
         )
     }
 }
+
+
 Family.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(Family);
+export default Family;
