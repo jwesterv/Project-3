@@ -23,7 +23,10 @@ import SearchIcon from '@material-ui/icons/Search';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button';
-
+import MessageList from '../../components/Chat/Messagelist/MessageList';
+// import Header from './Header/Header';
+import MessageBox from '../../components/Chat/Messagebox/MessageBox';
+import firebase from 'firebase';
 
 //Payload Template
 //=================================================
@@ -128,7 +131,15 @@ class Family extends React.Component {
 
         this.getMembers = this.getMembers.bind(this);
         this.getUser = this.getUser.bind(this);
-
+        var config = {
+            apiKey: "AIzaSyCcq7i-yLkoaJ5kZoFJEzl6LTSkXfpKFWw",
+            authDomain: "family-97404.firebaseapp.com",
+            databaseURL: "https://family-97404.firebaseio.com",
+            projectId: "family-97404",
+            storageBucket: "family-97404.appspot.com",
+            messagingSenderId: "991582671358"
+          };
+          firebase.initializeApp(config);
     }
 
     // state = {
@@ -241,23 +252,37 @@ class Family extends React.Component {
                     <Paper>
                         <div>Welcome {userData.username}</div>
                         <div>FamilyID: {userData.familyid}</div>
-                        
-                        
+
+
                         {/* {axios.get("/api/getmembers",  {params:{familyid:userData.familyid }})
                         }) */}
-                        
-                    
 
-                        
+
+
+
 
                     </Paper>
 
-
+                    <div className="container">
+                        {/* <Header title="Firebase Chat" /> */}
+                        <div className="columns">
+                            <div className="column is-3"></div>
+                            <div className="column is-6">
+                                <MessageList db={firebase} />
+                            </div>
+                        </div>
+                        <div className="columns">
+                            <div className="column is-3"></div>
+                            <div className="column is-6">
+                                <MessageBox db={firebase} />
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         )
-}
+    }
 }
 Family.propTypes = {
     classes: PropTypes.object.isRequired,
