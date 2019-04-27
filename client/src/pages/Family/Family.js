@@ -26,73 +26,7 @@ import Button from '@material-ui/core/Button';
 
 
 
-const styles = theme => ({
-    root: {
-        width: '100%',
-        maxWidth: '600px',
-        backgroundColor: theme.palette.background.paper,
-    },
-    heading: {
-        fontSize: theme.typography.pxToRem(15),
-        flexBasis: '33.33%',
-        flexShrink: 0,
-    },
-    secondaryHeading: {
-        fontSize: theme.typography.pxToRem(15),
-        color: theme.palette.text.secondary,
-    },
 
-    avatar: {
-        margin: 10,
-    },
-
-    bigAvatar: {
-        margin: 10,
-        width: 60,
-        height: 60,
-    },
-    //style for search bar
-    search: {
-        position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: fade(theme.palette.common.white, 0.15),
-        '&:hover': {
-            backgroundColor: fade(theme.palette.common.white, 0.25),
-        },
-        marginRight: theme.spacing.unit * 2,
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing.unit * 3,
-            width: 'auto',
-        },
-    },
-    searchIcon: {
-        width: theme.spacing.unit * 9,
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    inputRoot: {
-        color: 'inherit',
-        width: '100%',
-    },
-    inputInput: {
-        paddingTop: theme.spacing.unit,
-        paddingRight: theme.spacing.unit,
-        paddingBottom: theme.spacing.unit,
-        paddingLeft: theme.spacing.unit * 10,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('md')]: {
-            width: 200,
-        },
-    },
-
-});
 
 class Family extends React.Component {
     state = {
@@ -148,15 +82,6 @@ class Family extends React.Component {
         ]
     };
 
-
-
-    handleChange = panel => (event, expanded) => {
-        this.setState({
-            expanded: expanded ? panel : false,
-
-        });
-    };
-
     componentDidMount() {
         axios.get(`/profile/accesscode:`)
             .then(res => {
@@ -164,6 +89,7 @@ class Family extends React.Component {
                 this.setState({ persons: res.data });
             });
     };
+
 
     render() {
         const { classes } = this.props;
@@ -173,7 +99,6 @@ class Family extends React.Component {
 
             <div>
                 <Header />
-
                 <div align="center" >
                     <Paper>
                         <ul>
@@ -194,4 +119,4 @@ Family.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Family);
+export default withStyles(Family);
