@@ -26,9 +26,18 @@ class RegisterJoin extends React.Component {
     };
 };
 
+handleChange(event) {
+  this.setState({email: event.target.email});
+}
+
 handleSubmit = event => {
   
 event.preventDefault();
+
+/* if an access code exists then register
+axios.get("/api/famaccess")
+
+*/
 //add axios here to auth/login
 axios.post("/auth/register", {
     email: this.state.email,
