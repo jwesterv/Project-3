@@ -5,14 +5,14 @@ import Navbar from '../../components/NavBar';
 
 
 
-    //find handlesubmit 
-        //axios.post (route)
-        //function req res
-        //.data.object (name, bday, etc)
+//find handlesubmit 
+//axios.post (route)
+//function req res
+//.data.object (name, bday, etc)
 
 class ProfileForm extends React.Component {
 
-   constructor(props) {
+    constructor(props) {
         super(props);
         this.state = {
             firstName: '',
@@ -23,8 +23,7 @@ class ProfileForm extends React.Component {
             address: '',
             city: '',
             st: '',
-            zip: '',
-
+            zip: ''
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -115,13 +114,13 @@ class ProfileForm extends React.Component {
             });
 
     }
-    
+
     render() {
         return (
             <div>
 
                 <Navbar />
-               {this.state.firstName}
+                {this.state.firstName}
                 <br></br>
                 {this.state.firstName}
                 <br></br>
@@ -178,7 +177,7 @@ class ProfileForm extends React.Component {
                 </form>
             </div>
         );
-    } c
+    }
 }
 
 export default ProfileForm;
