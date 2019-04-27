@@ -49,7 +49,7 @@ class RegisterJoin extends React.Component {
 
     if (this.state.password === this.state.passwordVerify) {
 
-      axios.post("/auth/register", {
+      axios.post("/auth/registerJoin", {
         email: this.state.email,
         password: this.state.password,
         username: this.state.username,
