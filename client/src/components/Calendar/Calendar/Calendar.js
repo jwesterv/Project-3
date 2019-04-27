@@ -99,6 +99,7 @@ class Calendar extends Component {
   onDateClick = day => {
     this.setState({
       selectedDate: day
+      
     });
   };
 
@@ -120,6 +121,7 @@ class Calendar extends Component {
         {this.renderHeader()}
         {this.renderDays()}
         {this.renderCells()}
+        {this.renderEvents()}
 
       </div>
     );

@@ -13,6 +13,7 @@ class CalendarComponent extends Component {
        <main>
           <Calendar />
         </main>
+
         <form className="calendar-input" autoComplete="off">
           <TextField
             id="outlined-event"
