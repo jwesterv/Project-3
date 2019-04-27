@@ -113,9 +113,15 @@ router.get("/family", function (req, res) {
   });
 
 
+<<<<<<< HEAD
   //PROFILES
   router.post("/profile", function (req, res) {
     console.log(req.body);
+=======
+//PROFILES
+router.put("/profile", function (req, res) {
+  console.log(req.body);
+>>>>>>> 89c2f2a9aa0a8c86c1c9eaa8c6a867025e09047e
 
     db.ProfileForm.create({
       firstName: req.body.firstName,

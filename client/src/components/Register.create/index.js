@@ -161,7 +161,7 @@ class RegisterCreate extends React.Component {
 
             </CardContent>
           
-              <Button onClick={this.handleSubmit} component={Link} to="/chat" variant="outlined" color="primary" size="small" >CREATE NEW FAMILY</Button>
+              <Button onClick={this.handleSubmit} component={Link} to="/login" variant="outlined" color="primary" size="small" >CREATE NEW FAMILY</Button>
 
       
           </Card>

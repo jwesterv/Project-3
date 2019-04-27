@@ -76,6 +76,19 @@ main {
   padding-bottom: 3em
 }
 
+form {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
+  max-width: 50em;
+  padding-bottom: 3em
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+}
+
 
 /* GRID */
 
