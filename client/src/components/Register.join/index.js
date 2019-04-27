@@ -49,6 +49,22 @@ class RegisterJoin extends React.Component {
 
     if (this.state.password === this.state.passwordVerify) {
 
+      axios.post("/auth/famaccess", {
+        accessCode: this.state.accessCode
+
+      })
+        .then((response) => {
+          console.log(response);
+
+          //create the user if accesscode is found
+          
+      
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+
       axios.post("/auth/registerJoin", {
         email: this.state.email,
         password: this.state.password,

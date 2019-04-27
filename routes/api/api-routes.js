@@ -29,109 +29,133 @@ router.get("/family", function (req, res) {
   });
 });
 
-router.get("/famaccess", function (req, res) {
-  console.log(req.body)
-  db.Family.findOne({ where: { accessCode: req.body.accesscode } })
-    .then(function (dbFamAccess) {
-
-      res.json(dbFamAccess);
-    });
-});
-
-router.get("/getmembers", function (req, res) {
-  console.log(req.body)
-  db.User.findAll({ where: { familyid: req.body.familyid } })
-    .then(function (dbFamAccess) {
-
-      res.json(dbFamAccess);
-    });
-});
-
-//:family/chat option
-// router.get("/chat/:family/", function (req, res) {
-//   //pulls chat from firebase based on familyID and renders to react
-// })
 
 
-//POST WISHES
-router.post("/wishes", function (req, res) {
-  console.log(req.body);
-  //insert wish into table
-  db.Wish.create({
-    text: req.body.text,
-    granted: req.body.granted
-  }).then(function (dbWish) {
-    // callback function - access new wish 
-    res.json(dbWish);
-  });
-});
+// router.post("/getfamid", function (req, res) {
+//   console.log(req.body.email)
+//   db.User.findOne({ where: { email: req.body.email } })
+//     // db.User.findAll({ where: { familyid: req.body.familyid } })
+//     .then(function (resp) {
+           
+//            console.log(resp.familyid)
+//       res.json( resp.familyid )
 
-//DELETE WISHES ROUTE
-router.delete("/wishes/:id", function (req, res) {
-  // We just have to specify which todo we want to destroy with "where"
-  db.Wish.destroy({
-    where: {
-      id: req.params.id
-    }
-  }).then(function (dbWish) {
-    res.json(dbWish);
+//   })
+      
+      
+//     //   (response) => {
+//     //   res.json({response})
+//     //   console.log(response.familyid);
+
+//     // })
+//     .catch(function (error) {
+//       console.log(error);
+
+//     });
+
+//   })
+
+  router.get("/getmembers", function (req, res) {
+    console.log(req.params)
+
+    db.User.findAll({ where: { familyid: req.body.familyid } })
+      .then(function (dbMembers) {
+
+        res.json(dbMembers);
+      });
   });
 
-});
+  //:family/chat option
+  // router.get("/chat/:family/", function (req, res) {
+  //   //pulls chat from firebase based on familyID and renders to react
+  // })
 
-//UPDATE WISHES (PUT ROUTE)
-router.put("/wishes", function (req, res) {
 
-  db.Wish.update({
-    text: req.body.text,
-    granted: req.body.granted
-  }, {
+  //POST WISHES
+  router.post("/wishes", function (req, res) {
+    console.log(req.body);
+    //insert wish into table
+    db.Wish.create({
+      text: req.body.text,
+      granted: req.body.granted
+    }).then(function (dbWish) {
+      // callback function - access new wish 
+      res.json(dbWish);
+    });
+  });
+
+  //DELETE WISHES ROUTE
+  router.delete("/wishes/:id", function (req, res) {
+    // We just have to specify which todo we want to destroy with "where"
+    db.Wish.destroy({
       where: {
-        id: req.body.id
+        id: req.params.id
       }
     }).then(function (dbWish) {
       res.json(dbWish);
     });
-});
+
+  });
+
+  //UPDATE WISHES (PUT ROUTE)
+  router.put("/wishes", function (req, res) {
+
+    db.Wish.update({
+      text: req.body.text,
+      granted: req.body.granted
+    }, {
+        where: {
+          id: req.body.id
+        }
+      }).then(function (dbWish) {
+        res.json(dbWish);
+      });
+  });
 
 
+<<<<<<< HEAD
+  //PROFILES
+  router.post("/profile", function (req, res) {
+    console.log(req.body);
+=======
 //PROFILES
 router.put("/profile", function (req, res) {
   console.log(req.body);
+>>>>>>> 89c2f2a9aa0a8c86c1c9eaa8c6a867025e09047e
 
-  db.ProfileForm.create({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    birthday: req.body.birthday,
-    phone: req.body.phone,
-    email: req.body.email,
-    address: req.body.address,
-    city: req.body.city,
-    st: req.body.st,
-    zip: req.body.zip
-  }).then(function (dbProfile) {
+    db.ProfileForm.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      birthday: req.body.birthday,
+      phone: req.body.phone,
+      email: req.body.email,
+      address: req.body.address,
+      city: req.body.city,
+      st: req.body.st,
+      zip: req.body.zip
+    }).then(function (dbProfile) {
 
-    res.json(dbProfile);
+      res.json(dbProfile);
+    });
   });
-});
 
 
-router.post("/calendar", function (req, res) {
-  console.log(req.body);
+  router.post("/calendar", function (req, res) {
+    console.log(req.body);
 
-  db.Calendar.create({
-    event: req.body.firstName,
-    eventStart: req.body.eventStart,
-    eventEnd: req.body.eventEnd,
-    eventTime: req.body.eventTime,
-    description: req.body.description
+    db.Calendar.create({
+      event: req.body.firstName,
+      eventStart: req.body.eventStart,
+      eventEnd: req.body.eventEnd,
+      eventTime: req.body.eventTime,
+      description: req.body.description
 
-  }).then(function (dbCalendar) {
+    }).then(function (dbCalendar) {
 
-    res.json(dbCalendar);
+      res.json(dbCalendar);
+    });
   });
-});
 
 
 
-module.exports = router;
+  module.exports = router;

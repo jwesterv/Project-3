@@ -54,7 +54,7 @@ class RegisterCreate extends React.Component {
         password: this.state.password,
         username: this.state.username,
         dob: this.state.dob,
-        familyName: this.state.familyName,
+        familyName: this.state.familyName
 
       })
         .then((response) => {
