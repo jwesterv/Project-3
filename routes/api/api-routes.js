@@ -99,7 +99,7 @@ router.put("/wishes", function (req, res) {
 router.post("/profile", function (req, res) {
   console.log(req.body);
 
-  db.Profile.create({
+  db.ProfileForm.create({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     birthday: req.body.birthday,
