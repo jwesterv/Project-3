@@ -14,6 +14,7 @@ import { Link } from '@material-ui/core';
 import Chat from '../../components/Chat/index';
 import axios from "axios";
 import Pending from '../../pages/pending/pending';
+// import { Button, FormGroup, FormControl } from "react-bootstrap";
 
 
 
@@ -33,14 +34,9 @@ class RegisterCreate extends React.Component {
   }
   
 
-  handleChange(event) {
+  handleChange = event => {
     this.setState({
-      email: event.target.email,
-      password: event.target.password,
-      username: event.target.username,
-      dob: event.target.dob,
-      familyName: event.target.familyName,
-      passwordVerify: event.target.passwordVerify
+      [event.target.id]: event.target.value
     });
   }
 
@@ -48,19 +44,19 @@ class RegisterCreate extends React.Component {
     const token = "";
     const { history } = this.props;
     event.preventDefault();
+
     //add axios here to auth/login
 
     if (this.state.password === this.state.passwordVerify) {
+
       axios.post("/auth/register", {
         email: this.state.email,
         password: this.state.password,
         username: this.state.username,
-        passwordVerify: this.state.passwordVerify,
         dob: this.state.dob,
         familyName: this.state.familyName,
 
       })
-
         .then((response) => {
           console.log(response);
 
@@ -78,7 +74,6 @@ class RegisterCreate extends React.Component {
 
     }
 
-
   }
 
   render() {
@@ -93,9 +88,10 @@ class RegisterCreate extends React.Component {
             <CardContent>
               <Typography variant="h5" component="h2">
                 <TextField
-                  id="standard-dob-input"
+                name="familyName"
+                  id="familyName"
                   label="New Family Name"
-                  type="text"
+                 
                   value={this.state.familyName}
                   onChange={this.handleChange}
                   autoComplete="Your Family's Name"
@@ -104,9 +100,9 @@ class RegisterCreate extends React.Component {
               </Typography>
               <Typography variant="h5" component="h2">
                 <TextField
-                  id="standard-with-placeholder"
+                  id="email"
                   label="Email"
-                  type="text"
+                  type="email"
                   value={this.state.email}
                   onChange={this.handleChange}
                   placeholder="Email"
@@ -116,7 +112,7 @@ class RegisterCreate extends React.Component {
 
               <Typography variant="h5" component="h2">
                 <TextField
-                  id="standard-with-placeholder"
+                  id="username"
                   label="Username"
                   type="text"
                   value={this.state.username}
@@ -129,7 +125,7 @@ class RegisterCreate extends React.Component {
               <Typography variant="h5" component="h2">
 
                 <TextField
-                  id="standard-password-input"
+                  id="password"
                   label="Password"
                   type="password"
                   value={this.state.password}
@@ -141,7 +137,7 @@ class RegisterCreate extends React.Component {
 
               <Typography variant="h5" component="h2">
                 <TextField
-                  id="standard-passwordVerify-input"
+                  id="passwordVerify"
                   label="Confirm Password"
                   type="password"
                   value={this.state.passwordVerify}
@@ -153,7 +149,7 @@ class RegisterCreate extends React.Component {
 
               <Typography variant="h5" component="h2">
                 <TextField
-                  id="standard-dob-input"
+                  id="dob"
                   label="Date of Birth"
                   type="text"
                   value={this.state.dob}
