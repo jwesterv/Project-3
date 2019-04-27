@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import 'typeface-roboto';
-import Navbar from "../../components/NavBar/index";
+import Header from "../../components/Header/index";
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -32,7 +32,7 @@ const styles = {
     return (
         <div>
         
-       <Navbar />
+       <Header />
        <div align="center">
         <Paper>
       <Card className={classes.card}>
