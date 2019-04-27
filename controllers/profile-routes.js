@@ -2,6 +2,19 @@
 
 const Profile = require("../models/user.model");
 
+//GET ACCESS CODE
+app.get("/api/:accessCode", function (req, res) {
+    if (req.params.firstName) {
+        Profile.findAll({
+            where: {
+                firstName: req.params.accessCode
+            }
+        }).then(function (results) {
+            res.json(results);
+        });
+    }
+
+//GET ALL PROFILES
 module.exports = function (app) {
     app.get("/api/all", function (req, res) {
         Profile.findAll({}), then(function (results) {
@@ -9,6 +22,7 @@ module.exports = function (app) {
         });
     });
 
+ // GET FIRST NAME   
     app.get("/api/:firstName", function (req, res) {
         if (req.params.firstName) {
             Profile.findAll({
