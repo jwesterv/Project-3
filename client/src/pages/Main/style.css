@@ -1,3 +1,12 @@
 .buttonCenter {
   align-content: center;
 }
+
+.padding  {
+  padding-top: 5%
+}
+
+.logo {
+  height: 30%;
+  width: 30%
+}
