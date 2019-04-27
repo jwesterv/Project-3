@@ -28,7 +28,21 @@ class RegisterCreate extends React.Component {
       familyName: "",
       passwordVerify: ""
     };
-  };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  
+
+  handleChange(event) {
+    this.setState({
+      email: event.target.email,
+      password: event.target.password,
+      username: event.target.username,
+      dob: event.target.dob,
+      familyName: event.target.familyName,
+      passwordVerify: event.target.passwordVerify
+    });
+  }
 
   handleSubmit = event => {
     const token = "";
@@ -81,7 +95,9 @@ class RegisterCreate extends React.Component {
                 <TextField
                   id="standard-dob-input"
                   label="New Family Name"
-
+                  type="text"
+                  value={this.state.familyName}
+                  onChange={this.handleChange}
                   autoComplete="Your Family's Name"
                   margin="normal"
                 />
@@ -90,6 +106,9 @@ class RegisterCreate extends React.Component {
                 <TextField
                   id="standard-with-placeholder"
                   label="Email"
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.handleChange}
                   placeholder="Email"
                   margin="normal"
                 />
@@ -99,6 +118,9 @@ class RegisterCreate extends React.Component {
                 <TextField
                   id="standard-with-placeholder"
                   label="Username"
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.handleChange}
                   placeholder="Username"
                   margin="normal"
                 />
@@ -110,6 +132,8 @@ class RegisterCreate extends React.Component {
                   id="standard-password-input"
                   label="Password"
                   type="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
                   autoComplete="current-password"
                   margin="normal"
                 />
@@ -120,6 +144,8 @@ class RegisterCreate extends React.Component {
                   id="standard-passwordVerify-input"
                   label="Confirm Password"
                   type="password"
+                  value={this.state.passwordVerify}
+                  onChange={this.handleChange}
                   autoComplete="current-password"
                   margin="normal"
                 />
@@ -129,7 +155,9 @@ class RegisterCreate extends React.Component {
                 <TextField
                   id="standard-dob-input"
                   label="Date of Birth"
-
+                  type="text"
+                  value={this.state.dob}
+                  onChange={this.handleChange}
                   autoComplete="mm-dd-yy"
                   margin="normal"
                 />
