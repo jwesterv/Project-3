@@ -174,16 +174,26 @@ class Header extends React.Component {
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
              FAM.ily
             </Typography>
-            <Button color="inherit" component={Link} to="/">Home
+          
+                       <Button color="inherit" component={Link} to="/">Home
                        </Button>
+                       <Button color="inherit" component={Link} to="/calendar">Calendar
+                       </Button>
+                       <Button color="inherit" component={Link} to="/calendar">Calendar
+                       </Button>
+
+
+            <Button color="inherit" component={Link} to="/about">About
+                       </Button>
+
+
+                    
+
           
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <IconButton color="inherit">
-                <Badge badgeContent={4} color="secondary">
-                  <MailIcon />
-                </Badge>
-              </IconButton>
+            <Button color="inherit" component={Link} to="/login">Login</Button>
+             
               <IconButton color="inherit">
                 <Badge badgeContent={17} color="secondary">
                   <NotificationsIcon />

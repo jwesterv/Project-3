@@ -15,6 +15,7 @@ import Chat from '../../components/Chat/index';
 import axios from "axios";
 import Pending from '../../pages/pending/pending';
 // import { Button, FormGroup, FormControl } from "react-bootstrap";
+import Header from '../../components/Header/index';
 
 
 
@@ -79,7 +80,7 @@ class RegisterCreate extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Header />
 
         <div align="center">
 
