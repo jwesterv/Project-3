@@ -102,12 +102,12 @@ class Family extends React.Component {
                 lastName: 'Smith',
                 birthday: 'Jan 1, 2010',
                 phone: '555-234-2345',
-                accessCode: 456783,
+                accessCode: "456783",
                 email: 'mary.smith@mary.smith.com',
                 address: '4 Forest Drive',
                 city: 'Laguna Beach',
                 st: 'CA',
-                zip: 92688
+                zip: "92688"
             },
             {
                 firstName: 'John',

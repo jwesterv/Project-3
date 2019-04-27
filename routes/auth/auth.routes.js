@@ -9,6 +9,7 @@ var jwt = require('jsonwebtoken');
 router.post("/register", function (req, res) {
 
     if (!req.body.username || !req.body.password || !req.body.email) {
+        // return res.status(400).json(alert("You did not enter a username, password, or email"));
         return res.status(400).json({ msg: new Error("Please put all data on body") });
     }
 
