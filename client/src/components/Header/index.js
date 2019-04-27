@@ -179,7 +179,7 @@ class Header extends React.Component {
                        </Button>
                        <Button color="inherit" component={Link} to="/calendar">Calendar
                        </Button>
-                       <Button color="inherit" component={Link} to="/calendar">Calendar
+                       <Button color="inherit" component={Link} to="/chat">Chat
                        </Button>
 
 
@@ -195,7 +195,7 @@ class Header extends React.Component {
             <Button color="inherit" component={Link} to="/login">Login</Button>
              
               <IconButton color="inherit">
-                <Badge badgeContent={17} color="secondary">
+                <Badge bagit adgeContent={17} color="secondary">
                   <NotificationsIcon />
                 </Badge>
               </IconButton>
