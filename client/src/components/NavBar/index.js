@@ -28,7 +28,7 @@ function NavBar(props) {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className="toolbar">
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
           </IconButton>
           <Typography variant="h6" color="inherit" className={classes.grow}>

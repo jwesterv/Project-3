@@ -96,7 +96,7 @@ router.put("/wishes", function (req, res) {
 
 
 //PROFILES
-router.post("/profile", function (req, res) {
+router.put("/profile", function (req, res) {
   console.log(req.body);
 
   db.ProfileForm.create({
