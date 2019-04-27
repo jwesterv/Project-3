@@ -78,11 +78,16 @@ class CalendarComponent extends React.Component {
           <Calendar />
         </main>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         <form className="calendar-input" autoComplete="off">
 =======
         <form onSubmit={this.handleSubmit.bind(this)}>
 >>>>>>> 063ad606852771237f935b6ac1de14047544d4c9
+=======
+        <form className="calendar-input" autoComplete="off">
+        <form onSubmit={this.handleSubmit.bind(this)}>
+>>>>>>> 6dd4fadbee9e25c145a978e9d3f2d0487cfec0b4
           <TextField
             id="outlined-event"
             label="Event Name"
