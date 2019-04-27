@@ -179,7 +179,7 @@ class Header extends React.Component {
                        </Button>
                        <Button color="inherit" component={Link} to="/calendar">Calendar
                        </Button>
-                       <Button color="inherit" component={Link} to="/calendar">Calendar
+                       <Button color="inherit" component={Link} to="/chat">Chat
                        </Button>
 
 
