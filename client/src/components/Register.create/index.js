@@ -59,8 +59,8 @@ class RegisterCreate extends React.Component {
       })
         .then((response) => {
           console.log(response);
-
-          //redirect to main page (/main)
+          alert("Your Family has been Created!")
+          //redirect to main page
           
           history.push("/family")
         })
@@ -160,10 +160,10 @@ class RegisterCreate extends React.Component {
               </Typography>
 
             </CardContent>
-            <card>
+          
               <Button onClick={this.handleSubmit} component={Link} to="/chat" variant="outlined" color="primary" size="small" >CREATE NEW FAMILY</Button>
 
-            </card>
+      
           </Card>
         </div>
       </div >
