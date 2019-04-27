@@ -52,15 +52,13 @@ function CenteredGrid(props) {
           <Grid item xs={12}>
             <Paper>
               <div className="padding"></div>
-                <img className="logo" src={logo}></img>
-                <Grid>
-              <Button variant="outlined" color="primary" className={classes.button} component={Link} to="/registercreate">
-                Create
+              <img className="logo" src={logo}></img>
+                <Button variant="outlined" color="primary" className={classes.button} component={Link} to="/registercreate">
+                  Create
 </Button>
-              <Button variant="outlined" color="primary" className={classes.button} component={Link} to="/registerjoin">
-                Join
+                <Button variant="outlined" color="primary" className={classes.button} component={Link} to="/registerjoin">
+                  Join
 </Button>
-</Grid>
             </Paper>
 
           </Grid>
