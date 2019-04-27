@@ -78,8 +78,11 @@ class CalendarComponent extends React.Component {
           <Calendar />
         </main>
 
-        <form onSubmit={this.handleSubmit.bind(this)}>
 
+
+
+
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <TextField
             id="outlined-event"
             label="Event Name"
@@ -131,10 +134,15 @@ class CalendarComponent extends React.Component {
           <input className="btn btn-primary-outline" type="submit" value="Submit" />
 
         </form>
+
+
       </div>
     );
   }
 }
+
+
+
 
 
 export default CalendarComponent;

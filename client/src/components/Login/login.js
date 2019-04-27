@@ -40,7 +40,7 @@ export default class Login extends Component {
       .then((response) => {
         console.log(response);
         localStorage.setItem("token", response.data.token)
-        history.push("/chat")
+        history.push("/family")
       })
       .catch(function (error) {
         console.log(error);
