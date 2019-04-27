@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 // import './App.css';
 import MessageList from './Messagelist/MessageList';
-import Header from './Header/Header';
+import Header from '../../components/Header/index';
 import MessageBox from './Messagebox/MessageBox';
 
 
@@ -21,10 +21,10 @@ class Chat extends Component {
   }
   render() {
     return (
-
-
+<div>
+      <Header />
       <div className="container">
-        <Header title="Firebase Chat" />
+     
         <div className="columns">
           <div className="column is-3"></div>
           <div className="column is-6">
@@ -38,7 +38,7 @@ class Chat extends Component {
           </div>
         </div>
       </div>
-
+      </div>
     );
   }
 }

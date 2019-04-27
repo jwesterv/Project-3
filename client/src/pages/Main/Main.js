@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import RegisterCreate from '../../components/Register.create';
 import RegisterJoin from '../../components/Register.join';
-import Navbar from '../../components/NavBar'
+import Header from '../../components/Header/index'
 import "./style.css"
 import logo from "../../images/image1.png"
 import background from "../../images/background.jpg"
@@ -46,7 +46,7 @@ function CenteredGrid(props) {
 
   return (
     <div>
-      <Navbar />
+      <Header />
       
         <div align="center" className={classes.root}>
 

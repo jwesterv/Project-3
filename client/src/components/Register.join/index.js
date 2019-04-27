@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import classNames from 'classnames';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
-import Navbar from '../../components/NavBar'
+import Header from '../../components/Header'
 import { Link } from '@material-ui/core';
 import Chat from '../../components/Chat/index';
 import axios from "axios";
@@ -95,7 +95,7 @@ class RegisterJoin extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Header />
 
         <div align="center">
 

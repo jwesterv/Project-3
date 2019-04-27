@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./login.css";
 import axios from 'axios';
-import Navbar from "../NavBar";
+import Header from "../../components/Header/index";
 import { Link, Redirect, Route } from 'react-router-dom';
 import Chat from '../../components/Chat';
 
@@ -53,7 +53,7 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Header />
 
         <div className="Login">
 
