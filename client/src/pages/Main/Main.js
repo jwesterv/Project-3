@@ -10,6 +10,7 @@ import RegisterJoin from '../../components/Register.join';
 import Navbar from '../../components/NavBar'
 import "./style.css"
 import logo from "../../images/image1.png"
+import background from "../../images/background.jpg"
 
 
 // import Header from '../components/Header';
@@ -46,26 +47,30 @@ function CenteredGrid(props) {
   return (
     <div>
       <Navbar />
-      <div align="center" className={classes.root}>
+      
+        <div align="center" className={classes.root}>
 
-        <Grid container spacing={12}>
-          <Grid item xs={12}>
-            <Paper>
-              <div className="padding"></div>
-              <img className="logo" src={logo}></img>
-                <Button variant="outlined" color="primary" className={classes.button} component={Link} to="/registercreate">
-                  Create Tree
+          <Grid container spacing={12}>
+            <Grid item xs={12}>
+              <Paper>
+                <div className="padding"></div>
+                <img className="logo" src={logo}></img>
+                <Grid>
+                  <Button variant="outlined" color="primary" className={classes.button} component={Link} to="/registercreate">
+                    Create Tree
 </Button>
-                <Button variant="outlined" color="primary" className={classes.button} component={Link} to="/registerjoin">
-                  Join Tree
+                  <Button variant="outlined" color="primary" className={classes.button} component={Link} to="/registerjoin">
+                    Join Tree
 </Button>
-            </Paper>
+                </Grid>
+              </Paper>
+
+            </Grid>
+
 
           </Grid>
-
-
-        </Grid>
-      </div>
+        </div>
+        
     </div>
   );
 }
