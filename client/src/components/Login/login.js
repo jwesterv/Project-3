@@ -61,7 +61,7 @@ export default class Login extends Component {
             <FormGroup controlId="email" bsSize="large">
               <div>Email</div>
               <FormControl
-                autoFocus
+                // autoFocus
                 type="email"
                 value={this.state.email}
                 onChange={this.handleChange}
