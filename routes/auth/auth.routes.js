@@ -75,6 +75,7 @@ router.post("/login", function (req, res) {
                     token: jwt.sign({
                         exp: parseInt(expiry.getTime() / 1000),
                         //instead of resp.id use userid
+                        familyid: resp.familyid,
                         userID: resp.id,
                         username: resp.username,
                         email: resp.email
@@ -89,5 +90,14 @@ router.post("/login", function (req, res) {
             res.status(400).json({ msg: err.toString() });
         })
 })
+
+router.get("/famaccess", function (req, res) {
+    console.log(req.body)
+    db.Family.findOne({ where: { accessCode: req.body.accesscode } })
+      .then(function (dbFamAccess) {
+  
+        res.json(dbFamAccess);
+      });
+  });
 
 module.exports = router;
