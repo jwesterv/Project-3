@@ -40,7 +40,7 @@ export default class Login extends Component {
       .then((response) => {
         console.log(response);
         localStorage.setItem("token", response.data.token)
-        history.push("/family")
+        history.push("/chat")
       })
       .catch(function (error) {
         console.log(error);
@@ -61,7 +61,7 @@ export default class Login extends Component {
             <FormGroup controlId="email" bsSize="large">
               <div>Email</div>
               <FormControl
-                autoFocus
+                // autoFocus
                 type="email"
                 value={this.state.email}
                 onChange={this.handleChange}

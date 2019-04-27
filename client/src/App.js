@@ -48,7 +48,7 @@ export default class App extends Component {
           <Route exact path="/about" component={About} />
           <PrivateRoute exact path="/chat" component={Chat} />
           <Route exact path="/publicchat" component={Chat} />
-          <Route exact path="/join" component={ProfileJoin} />
+          {/* <Route exact path="/join" component={ProfileJoin} /> */}
           <Route exact path="/create" component={ProfileCreate} />
           <Route exact path="/wishlist" component={WishList} />
           <Route exact path="/profile" component={Profile} />

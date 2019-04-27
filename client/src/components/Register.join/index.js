@@ -11,99 +11,180 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Navbar from '../../components/NavBar'
 import { Link } from '@material-ui/core';
+import Chat from '../../components/Chat/index';
 import axios from "axios";
-import Pending from "../../pages/pending/pending"
+import Pending from '../../pages/pending/pending';
+// import { Button, FormGroup, FormControl } from "react-bootstrap";
 
 
 
 class RegisterJoin extends React.Component {
   constructor(props) {
     super(props);
-     this.state = {
+    this.state = {
       email: "",
       password: "",
       username: "",
-    };
-};
-
-handleSubmit = event => {
-  
-event.preventDefault();
-//add axios here to auth/login
-axios.post("/auth/register", {
-    email: this.state.email,
-    password: this.state.password,
-    username: this.state.username,
- 
-  })
-
-  .then((response) => {
-    console.log(response);
-  
-    //redirect to main page (/main)
-
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-
-}
-
-render () {
-  return (
-    <div>
-        <Navbar />
-  
-    <div align="center">
+      dob: "",
     
-    <Card>
-      <CardContent>
-      <Typography variant="h5" component="h2">
-        <TextField
-          id="standard-with-placeholdert"
-          label="Family Access Code"
-          placeholder="Family Access Code"
-           margin="normal"
-        />
-                </Typography>
-        <Typography variant="h5" component="h2">
-          <TextField
-            id="standard-with-placeholder"
-            label="Email"
-            placeholder="Email"
-            margin="normal"
-          />
-        </Typography>
+      passwordVerify: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  
 
-        <Typography variant="h5" component="h2">
-          <TextField
-            id="standard-with-placeholder"
-            label="Username"
-            placeholder="Username"
-            margin="normal"
-          />
-        </Typography>
-        <Typography variant="h5" component="h2">
-        <TextField
-          id="standard-password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
-          margin="normal"
-        />
-                </Typography>
+  handleChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  }
+
+  handleSubmit = event => {
+    const token = "";
+    const { history } = this.props;
+    event.preventDefault();
+
+    //add axios here to auth/login
+
+    if (this.state.password === this.state.passwordVerify) {
+
+      axios.post("/auth/famaccess", {
+        accessCode: this.state.accessCode
+
+      })
+        .then((response) => {
+          console.log(response);
+
+          //create the user if accesscode is found
+          
       
-      </CardContent>
-      <card>
-        <Button onClick={this.handleSubmit} component={Link} to="/pending" variant="outlined" color="primary" size="small" >JOIN FAMILY</Button>
-      </card>
-    </Card>
-    </div>
-    </div>
-  );
-}
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+
+      axios.post("/auth/registerJoin", {
+        email: this.state.email,
+        password: this.state.password,
+        username: this.state.username,
+        dob: this.state.dob,
+        accessCode: this.state.accessCode
+
+      })
+        .then((response) => {
+          console.log(response);
+
+          //redirect to main page (/main)
+          
+          history.push("/family")
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+    }else{
+
+      alert("Password and Confirm Password do not match")
+
+    }
+
+  }
+
+  render() {
+    return (
+      <div>
+        <Navbar />
+
+        <div align="center">
+
+          <Card>
+            To Join Your Family, Enter the Below Information:
+            <CardContent>
+          
+              <Typography variant="h5" component="h2">
+                <TextField
+                  id="email"
+                  label="Email"
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                  placeholder="Email"
+                  margin="normal"
+                />
+              </Typography>
+
+              <Typography variant="h5" component="h2">
+                <TextField
+                  id="username"
+                  label="Username"
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.handleChange}
+                  placeholder="Username"
+                  margin="normal"
+                />
+              </Typography>
+
+              <Typography variant="h5" component="h2">
+
+                <TextField
+                  id="password"
+                  label="Password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                  autoComplete="current-password"
+                  margin="normal"
+                />
+              </Typography>
+
+              <Typography variant="h5" component="h2">
+                <TextField
+                  id="passwordVerify"
+                  label="Confirm Password"
+                  type="password"
+                  value={this.state.passwordVerify}
+                  onChange={this.handleChange}
+                  autoComplete="current-password"
+                  margin="normal"
+                />
+              </Typography>
+
+              <Typography variant="h5" component="h2">
+                <TextField
+                  id="dob"
+                  label="Date of Birth"
+                  type="text"
+                  value={this.state.dob}
+                  onChange={this.handleChange}
+                  autoComplete="mm-dd-yy"
+                  margin="normal"
+                />
+              </Typography>
+              <Typography variant="h5" component="h2">
+                <TextField
+                name="accessCode"
+                  id="accessCode"
+                  label="Family Access Code"
+                 
+                  value={this.state.accessCode}
+                  onChange={this.handleChange}
+                  autoComplete="Family Access Code"
+                  margin="normal"
+                />
+              </Typography>
+            </CardContent>
+          
+              <Button onClick={this.handleSubmit} component={Link} to="/chat" variant="outlined" color="primary" size="small" >CREATE NEW FAMILY</Button>
+
+      
+          </Card>
+        </div>
+      </div >
+    );
+  }
 }
 
 export default RegisterJoin;
-
-

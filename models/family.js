@@ -5,8 +5,6 @@ module.exports = function (sequelize, DataTypes) {
         accessCode: DataTypes.STRING,
         numUsers: DataTypes.INTEGER,
         creator: DataTypes.STRING,
-        createdAt: DataTypes.DATE,
-        updatedAt: DataTypes.DATE,
         //for other family chats will need a chatname
         chatid: DataTypes.STRING,
         familyid: DataTypes.STRING
